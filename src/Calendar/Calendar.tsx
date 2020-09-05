@@ -9,10 +9,12 @@ const CalendarPage = () => {
   return(
    <main className='calendar'>
      <h1 className='headings'>Calendar</h1>
-     <Calendar
-        onClickDay={setDate}
-        value={ givenDate }
-      />
+     <section className='calendar-container'>
+      <Calendar
+          onClickDay={setDate}
+          value={givenDate}
+        />
+     </section>
    </main>
   );
 }
