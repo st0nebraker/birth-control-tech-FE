@@ -62,6 +62,12 @@ nav {
 	max-width: 93%;
 }
 
+.headings {
+  font-family: 'Damion';
+  color: #83C7DF;
+	font-size: 8vh;
+}
+
 .info-paragraph {
 	color: #FFF6E9;
 	font-family: 'Capriola', sans-serif;

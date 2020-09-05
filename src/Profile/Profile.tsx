@@ -1,5 +1,6 @@
 import React from 'react';
 import './Profile.css';
+// import './../Index.css';
 
 export interface ProfileProps {
   lastOvulation: string,
@@ -10,16 +11,16 @@ export interface ProfileProps {
 const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
   return (
     <main className='profile'>
-      <h1 className='profile-heading'>Profile</h1>
+      <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
         <p>
          <span>Last Ovulation: </span> <br/>{lastOvulation}
         </p>
         <p>
-         <span>Duration: </span>  <br/>{duration} Days
+         <span>Duration: </span> <br/>{duration} Days
         </p>
         <p>
-         <span>Average Cycle Length: </span>  <br/>{averageCycle} Days
+         <span>Average Cycle Length: </span> <br/>{averageCycle} Days
         </p>
       </section>
     </main>
