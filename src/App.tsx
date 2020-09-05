@@ -1,24 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Profile
+import Profile from './Profile/Profile';
 
-function App() {
+const App: React.SFC = () => {
+  const [lastOvulation, setLastOvulation] = useState('08-01-2020');
+  const [duration, setDuration] = useState(7);
+  const [averageCycle, setAverageCycle] = useState(28);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle}/>
+    </main>
   );
 }
 
