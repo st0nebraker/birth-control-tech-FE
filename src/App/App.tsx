@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar'
 import InfoTag from '../NavBar/InfoTag'
+import Info from '../Info/Info'
+import Reports from '../Reports/Reports'
 import Home from '../Home/Home'
 import Profile from '../Profile/Profile';
 import Calendar from '../Calendar/Calendar';
@@ -17,18 +19,14 @@ const App = () => {
     <main className="App">
 			<InfoTag />
 			<Switch>
-			<Route 
-					path='/calendar'
-					component={Calendar}
-				/>
+			<Route path='/calendar' component={Calendar} />
+				<Route path='/info' component={Info} />
+				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
 					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle}/>}
 				/>
-				<Route 
-					path='/'
-					component={Home}
-				/>
+				<Route exact path='/' component={Home} />
 			</Switch>
 			<NavBar />
     </main>
