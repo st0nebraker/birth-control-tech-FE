@@ -50,3 +50,9 @@ nav {
 	object-fit: cover;
 	max-width: 93%;
 }
+
+.headings {
+  font-family: 'Damion';
+  color: #83C7DF;
+  font-size: 8vh;
+}
