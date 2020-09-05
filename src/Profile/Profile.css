@@ -1,0 +1,19 @@
+.profile {
+  height: 90vh;
+	background-color: #233C4C;
+	width: 100%;
+}
+.profile-heading {
+  font-family: 'Damion';
+  color: #83C7DF;
+  font-size: 8vh;
+}
+
+.profile-container {
+  color: #FFF6E9;
+  font-family: 'Capriola', sans-serif;
+  font-size: 3vh;
+  display: flex;
+  flex-direction: column;
+	justify-content: space-between;
+}
