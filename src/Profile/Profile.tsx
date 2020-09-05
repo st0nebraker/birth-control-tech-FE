@@ -14,7 +14,7 @@ const Profile: React.SFC<Profile> = ({lastOvulation, duration, averageCycle}) =>
         <span>Last Ovulation: </span> {lastOvulation}
        </p>
        <p>
-        <span>Duration: </span> {duration}
+        <span>Duration: </span> {duration} Days
        </p>
        <p>
         <span>Average Cycle Length: </span> {averageCycle}
