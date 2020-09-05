@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Home from '../Home/Home'
 import NavBar from '../NavBar/NavBar'
 import InfoTag from '../NavBar/InfoTag'
-import Home from '../Home/Home'
+import Info from '../Info/Info'
+import Reports from '../Reports/Reports'
 import './App.css';
 
 const App = () => {
@@ -12,10 +14,9 @@ const App = () => {
     <main className="App">
 			<InfoTag />
 			<Switch>
-				<Route 
-					path='/'
-					component={Home}
-				/>
+				<Route exact path='/' component={Home} />
+				<Route path='/info' component={Info} />
+				<Route path='/stats' component={Reports} />
 			</Switch>
 			<NavBar />
     </main>

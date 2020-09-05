@@ -1,5 +1,7 @@
 export const darkGrey = '#233C4C';
 
+export const darkerGrey = '#172A35';
+
 export const palePurple = '#7582C8';
 
 export const aqua = '#83C7DF';
