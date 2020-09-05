@@ -1,12 +1,12 @@
 import React from 'react';
 
-export interface Profile {
+export interface ProfileProps {
   lastOvulation: string,
   duration: number,
   averageCycle: number,
 }
 
-const Profile: React.SFC<Profile> = ({lastOvulation, duration, averageCycle}) => {
+const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
   return (
     <section>
       <h1>Profile</h1>
