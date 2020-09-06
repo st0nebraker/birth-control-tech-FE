@@ -19,3 +19,15 @@
   border-radius: 10px;
   width: 80%;
 }
+
+.logout-button {
+  border-radius: 10px;
+  width: 60%;
+  height: 8%;
+  margin: 12%;
+  font-family: 'Capriola', sans-serif;
+  border: none;
+  font-size: 2.5vh;
+  background-color: #83C7DF;
+  color: #172A35;
+}
