@@ -7,7 +7,7 @@ const Reports = () => {
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
-			<p className='reports'>Reports</p>
+			<p className='headings'>Reports</p>
 			<section className='reports-container'>
 				{charts.map(chart => {
 					return (<section className='display-chart'>{chart}</section>)
