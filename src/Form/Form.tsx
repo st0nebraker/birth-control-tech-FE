@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './Form.scss';
 import MultiSelect from "react-multi-select-component";
+import './Form.scss';
 
 
 const Form: React.FC = () => {
-	const [today, setToday] = useState('');
-	const [temp, setTemp] = useState('');
-	const [selected, setSelected] = useState([]);
-	const [symptoms, setSymptoms] = useState([
+	const [ today, setToday ] = useState('');
+	const [ temp, setTemp ] = useState('');
+	const [ time, setTime ] = useState('')
+	const [ selected, setSelected ] = useState([]);
+	const [ symptoms, setSymptoms ] = useState([
 		{label: 'Cramping', value: 'cramping'},
 		{label: 'Mood change', value: 'mood change'},
 		{label: 'Bloating', value: 'bloating'},
@@ -42,11 +43,23 @@ const Form: React.FC = () => {
 		<main className='Main-User-View'>
 			<form>
 				<label>Today: {today}</label>
+				<label>Time:
+					<input 
+						type="time"
+						name="time" 
+						min="09:00" 
+						max="18:00" 
+						style={{ width: '45%' }}
+						className='input'
+						onChange={e => setTime(e.target.value)}
+						required 
+					/>
+				</label>
 				<label className='temp-label'>Temp:
 					<input
 						name="temp"
 						type="text"
-						placeholder=''
+						placeholder='--'
 						value={temp}
 						className='input'
 						aria-label='temperature-input'

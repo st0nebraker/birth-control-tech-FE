@@ -28,7 +28,8 @@ const Login: React.SFC<LoginProps> = (props) => {
             className="login-input"
             placeholder="username"
             name="username"
-            value={props.username}
+						value={props.username}
+						style={{ width: '60%' }}
             onChange={(event) => props.setUsername(event.target.value)}
             required
           />
