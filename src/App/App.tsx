@@ -6,6 +6,7 @@ import Info from '../Info/Info'
 import Reports from '../Reports/Reports'
 import Home from '../Home/Home'
 import Profile from '../Profile/Profile';
+import Form from '../Form/Form';
 import './App.css';
 
 const App = () => {
@@ -18,13 +19,14 @@ const App = () => {
     <main className="App">
 			<InfoTag />
 			<Switch>
-				<Route exact path='/' component={Home} />
 				<Route path='/info' component={Info} />
 				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
 					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle}/>}
 				/>
+				<Route path='/new-entry' component={Form} />
+				<Route path='/' component={Home} />
 			</Switch>
 			<NavBar />
     </main>
