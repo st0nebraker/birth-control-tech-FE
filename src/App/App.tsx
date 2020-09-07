@@ -31,10 +31,11 @@ const App = () => {
 					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle}/>}
 				/>
 				{loggedIn && 
-					<Route path='/' component={Home} />
+					<Route exact path='/' component={Home} />
 				}
 				{!loggedIn && 
 					<Route 
+						exact
 						path='/' 
 						render={() => <Login username={username} setUsername={setUsername} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} 
 					/>
