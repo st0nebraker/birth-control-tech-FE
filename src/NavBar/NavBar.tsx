@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './NavBar.scss';
 
 const NavBar = () => {
 	return (
 		<nav>
-			<Link to='/'>
-				<img src={require('../assets/home.svg')} alt="Home" title="Home" />
-			</Link>
-			<Link to='/calendar'>
-				<img src={require('../assets/calendar.svg')} alt="Calendar" title="Calendar" />
-			</Link>
-			<Link to='/new-entry'>
-				<img src={require('../assets/new.svg')} alt="New Entry" title="New Entrry" />
-			</Link>
-			<Link to='/stats'>
-				<img src={require('../assets/chart.svg')} alt="Statistics" title="Statistics" />
-			</Link>
-			<Link to='/profile'>
-				<img src={require('../assets/profile.svg')} alt="Profile" title="Profile" />
-			</Link>
+			<NavLink 
+				exact
+				className='home'
+				activeClassName='home-active'
+				to='/'
+			/>
+			<NavLink 
+				className='calendar-icon'
+				activeClassName='calendar-active'
+				to='/calendar' 
+			/>
+			<NavLink 
+				className='new'
+				activeClassName='new-active'
+				to='/new-entry'
+			/>
+			<NavLink 
+				className='chart'
+				activeClassName='chart-active'
+				to='/stats'
+			/>
+			<NavLink 
+				className='profile-icon'
+				activeClassName='profile-active'
+				to='/profile'
+			/>
 		</nav>
 	)
 }

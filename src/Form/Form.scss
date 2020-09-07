@@ -1,0 +1,64 @@
+.multi-select {
+  --rmsc-main: #FBCE90;
+  --rmsc-hover: #f1f3f5;
+  --rmsc-selected: #e2e6ea;
+  --rmsc-border: #ccc;
+  --rmsc-gray: #aaa;
+  --rmsc-bg: #fff;
+  --rmsc-p: 10px; /* Spacing */
+  --rmsc-radius: 4px; /* Radius */
+  --rmsc-h: 38px; /* Height */
+}
+
+form {
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 80%;
+	margin-left: 10%;
+	color: #FFF6E9;
+	text-align: left;	
+	font-family: 'Capriola', sans-serif;
+	font-size: 1.6em;
+}
+
+.input {
+	background-color: #3F657D;
+	border: solid 1px #3F657D;
+	border-radius: 3px;
+	height: 1.8em;
+	width: 20%;
+	margin-left: 8px;
+	margin-right: 8px;
+	color: #FFF6E9;
+	font-family: Capriola;
+	font-size: .7em;
+}
+
+input {
+	width: 10%;
+	overflow: auto;
+}
+
+.submit {
+	background-color: #7582C8;
+	border: solid 1px #3F657D;
+	border-radius: 3px;
+	height: 3em;
+	color: #FFF6E9;
+	font-family: 'Capriola', sans-serif;
+	width: 50%;
+	font-size: .7em!important;
+	margin-left: 20%;
+}
+
+.temp-label {
+	display: flex;
+	align-items: flex-end;
+}
+
+.multi-select {
+	color: grey;
+
+}
