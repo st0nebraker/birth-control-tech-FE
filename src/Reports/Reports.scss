@@ -24,3 +24,31 @@
 	color: white;
 	font-size: 4vh;
 }
+
+.slider {
+	height: 45vh;
+}
+
+.carousel .slide {
+	background: #172A35;
+	background-color: #172A35;
+	border-radius: 17px;
+}
+
+.carousel .carousel-status {
+	display: none;
+}
+
+.carousel .slide .legend {
+	font-size: 15px;
+	height: 20%;
+	text-align: left;
+}
+
+.display-chart {
+	width: 100vw;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20%;
+}
