@@ -57,17 +57,16 @@ const Form: React.FC = () => {
 				</label>
 				<label className='temp-label'>Temp:
 					<input
-						name="temp"
-						type="text"
-						placeholder='--'
-						value={temp}
-						className='input'
-						aria-label='temperature-input'
-						onChange={e => setTemp(e.target.value)} 
+					name="temp"
+					type="text"
+					placeholder='--'
+					value={temp}
+					className='input'
+					aria-label='temperature-input'
+					onChange={e => setTemp(e.target.value)} 
 					/>
 					<div className='BBT-deg'>°F</div>
 				</label>
-
 				<label>Symptoms:
 					<MultiSelect
 						options={symptoms}
@@ -77,7 +76,6 @@ const Form: React.FC = () => {
 						className='multi-select'
 					/>
 				</label>
-
 				<input type='submit' value='SUBMIT' className='submit' />
 			</form>
 

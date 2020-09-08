@@ -11,10 +11,10 @@ const Reports = () => {
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
 			<p className='headings'>Reports</p>
 			<Carousel>
-				{charts.map(chart => {
+				{charts.map((chart, i) => {
 					return (
-						<div className='display-chart'>
-							{/* chartImage */}
+						<div className='display-chart' key={i}>
+							{/* chart.image */}
 							<p>{chart}</p>
 							<p className="legend">Subtitle: info</p>
 						</div>
