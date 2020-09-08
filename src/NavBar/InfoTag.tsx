@@ -5,6 +5,7 @@ const InfoTag = () => {
 	return (
 		<section className='info-tag'>
 			<NavLink 
+				title='info tag'
 				className='info'
 				activeClassName='info-active'
 				to='/info'
