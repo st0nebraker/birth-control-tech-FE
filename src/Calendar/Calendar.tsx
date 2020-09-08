@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Calendar from 'react-calendar';
-import './Calendar.css';
+import './Calendar.scss';
+import 'react-calendar/dist/Calendar.css'
+
 
 
 const CalendarPage = () => {
@@ -13,6 +15,7 @@ const CalendarPage = () => {
       <Calendar
           onClickDay={setDate}
           value={givenDate}
+          className='react-calendar'
         />
      </section>
    </main>

@@ -23,6 +23,7 @@ const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle
          <span>Average Cycle Length: </span> <br/>{averageCycle} Days
         </p>
       </section>
+      <button className='logout-button'>Logout</button>
     </main>
   )
 }
