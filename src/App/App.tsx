@@ -23,13 +23,24 @@ const App = () => {
 	
 	const getBluetooth = async (): Promise<any> => {
 		try {
-			let device:any = await navigator.bluetooth.requestDevice({
+			const device:any = await navigator.bluetooth.requestDevice({
 				filters: [
 						{ namePrefix: 'iBBQ' }
 				],
-				optionalServices: [ 0xfff0 ]
-		});
-		console.log(device, 'device')
+
+				optionalServices: [ 0xfff0 ],
+				// acceptAllDevices: true
+			})
+
+			const server = await device.gatt.connect(); 
+			const service = await server.getPrimaryService(0xfff0);
+			const characteristic = await service.getCharacteristic(0xfff0);
+
+
+			console.log(device, 'device')
+			console.log(server, 'server')
+			console.log(service, 'service')
+			console.log(characteristic, 'characteristic')
  		} catch (error) {
 			console.log(error, 'error')
 			setError(error.toString())
