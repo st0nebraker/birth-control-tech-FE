@@ -20,7 +20,7 @@ const Login: React.SFC<LoginProps> = (props) => {
 
   return (
     <section className="Main-User-View login-wrapper">
-      <div className='app-icon'></div>
+      <div className='app-icon' title='logo'></div>
       <form className="login-form">
 				<label className='form-input'>
 					Name:

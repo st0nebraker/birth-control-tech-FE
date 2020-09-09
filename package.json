@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.55",
@@ -12,7 +11,11 @@
     "@types/react-calendar": "^3.1.1",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+<<<<<<< HEAD
     "@types/web-bluetooth": "0.0.9",
+=======
+    "@types/testing-library__dom": "^7.0.1",
+>>>>>>> master
     "multiselect-react-dropdown": "^1.5.7",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -45,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.5.0"
   }
 }
