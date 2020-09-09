@@ -16,7 +16,25 @@ const App = () => {
 	const [ loggedIn, setLoggedIn ] = useState(false);
 	const [lastOvulation, setLastOvulation] = useState('08-01-2020');
   const [duration, setDuration] = useState(7);
-  const [averageCycle, setAverageCycle] = useState(28);
+	const [averageCycle, setAverageCycle] = useState(28);
+	const [error, setError] = useState('')
+
+	// useEffect(() => {getBluetooth()}, []);
+	
+	const getBluetooth = async (): Promise<any> => {
+		try {
+			let device:any = await navigator.bluetooth.requestDevice({
+				filters: [
+						{ namePrefix: 'iBBQ' }
+				],
+				optionalServices: [ 0xfff0 ]
+		});
+		console.log(device, 'device')
+ 		} catch (error) {
+			console.log(error, 'error')
+			setError(error.toString())
+		}
+	}
 
   return (
     <main className="App">
@@ -37,7 +55,7 @@ const App = () => {
 					<Route 
 						exact
 						path='/' 
-						render={() => <Login username={username} setUsername={setUsername} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} 
+						render={() => <Login username={username} setUsername={setUsername} loggedIn={loggedIn} setLoggedIn={setLoggedIn} getBluetooth={getBluetooth} />} 
 					/>
 				}
 			</Switch>

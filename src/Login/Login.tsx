@@ -7,11 +7,13 @@ export interface LoginProps {
   setUsername: Function;
   loggedIn: boolean;
   setLoggedIn: Function;
+  getBluetooth: Function;
 }
 
 const Login: React.SFC<LoginProps> = (props) => {
   const verifyUser = () => {
     props.setLoggedIn(!props.loggedIn);
+    props.getBluetooth();
   };
 
   const buttonsEnabled = props.username.trim() !== "";

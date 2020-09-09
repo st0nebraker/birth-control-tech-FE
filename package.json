@@ -12,6 +12,7 @@
     "@types/react-calendar": "^3.1.1",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+    "@types/web-bluetooth": "0.0.9",
     "multiselect-react-dropdown": "^1.5.7",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
