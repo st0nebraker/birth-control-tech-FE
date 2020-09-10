@@ -51,21 +51,21 @@
 			// 		.catch(error => console.log(error))
 			// }
 
-			async function showNotification() {
-				const result = await Notification.requestPermission();
-				if (result === 'granted') {
-					if (new Date().getHours() > 12) {
-						const noti = new Notification('Hello!', {
-							body: 'Don\'t forget to take your temperature first thing this morning!',
-							icon: 'favicon.ico'
-						});
+			// async function showNotification() {
+			// 	const result = await Notification.requestPermission();
+			// 	if (result === 'granted') {
+			// 		if (new Date().getHours() > 12) {
+			// 			const noti = new Notification('Hello!', {
+			// 				body: 'Don\'t forget to take your temperature first thing this morning!',
+			// 				icon: 'favicon.ico'
+			// 			});
 
-					}
-					noti.onclick = () => alert('clicked');
-				}
-			}
+			// 		}
+			// 		noti.onclick = () => alert('clicked');
+			// 	}
+			// }
 
-			showNotification();
+			// showNotification();
 		</script>
     <div id="root"></div>
     <!--
