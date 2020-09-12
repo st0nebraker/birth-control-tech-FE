@@ -6,33 +6,33 @@
   align-items: center;
   text-align: center;
   margin: 0;
-}
 
-.profile-label {
-  font-size: 2.5vh;
-}
+  label {
+    font-size: 2.5vh;
+  }
 
-.profile-input {
-  width: fit-content;
-  padding: 1%;
-  margin-top: -10%;
-  background-color: #3F657D;
-	border: solid 1px #3F657D;
-  border-radius: 3px;
-  color: #FFF6E9;
-  font-size: .4em;
-  font-family: 'Capriola', sans-serif;
-}
+  input {
+    width: fit-content;
+    padding: 1%;
+    margin-top: -10%;
+    background-color: #3F657D;
+    border: solid 1px #3F657D;
+    border-radius: 3px;
+    color: #FFF6E9;
+    font-size: .4em;
+    font-family: 'Capriola', sans-serif;
+  }
 
-.profile-button {
-  border-radius: 10px;
-  width: 60%;
-  height: 8%;
-  font-family: 'Capriola', sans-serif;
-  border: none;
-  font-size: 2.5vh;
-  background-color: #7582C8;
-  color: #FFF6E9;
-  align-self: center;
+  button {
+    border-radius: 10px;
+    width: 60%;
+    height: 8%;
+    font-family: 'Capriola', sans-serif;
+    border: none;
+    font-size: 2.5vh;
+    background-color: #7582C8;
+    color: #FFF6E9;
+    align-self: center;
+  }
 }
 
