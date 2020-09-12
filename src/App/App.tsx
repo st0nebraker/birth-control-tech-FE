@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <main className="App">
-			{loggedIn && <InfoTag />}
+			{loggedIn && <InfoTag username={username}/>}
 			<Switch>
 				<Route path='/info' component={Info} />
 				<Route path='/calendar' component={Calendar} />

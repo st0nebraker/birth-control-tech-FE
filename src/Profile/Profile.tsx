@@ -1,11 +1,10 @@
 import React from 'react';
 import './Profile.css';
-// import './../Index.css';
 
 export interface ProfileProps {
-  lastOvulation: string,
-  duration: number,
-  averageCycle: number,
+  lastOvulation: string;
+  duration: number;
+  averageCycle: number;
 }
 
 const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
