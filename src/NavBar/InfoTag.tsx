@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 export interface InfoTagProps {
   username: string;
-  // loggedIn: boolean;
 }
 
 const InfoTag: React.FC<InfoTagProps> = ({username}) => {

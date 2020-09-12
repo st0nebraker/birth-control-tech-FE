@@ -16,7 +16,12 @@ const App = () => {
 	const [ loggedIn, setLoggedIn ] = useState(false);
 	const [lastOvulation, setLastOvulation] = useState('08-01-2020');
   const [duration, setDuration] = useState(7);
-  const [averageCycle, setAverageCycle] = useState(28);
+	const [averageCycle, setAverageCycle] = useState(28);
+	
+	const logoutUser= () => {
+		setUsername('')
+		setLoggedIn(false)
+	}
 
   return (
     <main className="App">
@@ -28,7 +33,7 @@ const App = () => {
 				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
-					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle}/>}
+					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle} logoutUser={logoutUser}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />

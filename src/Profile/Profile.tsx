@@ -1,22 +1,19 @@
 import React from 'react';
-<<<<<<< HEAD
-import './Profile.css';
-=======
 import './Profile.scss';
 import ProfileForm from '../ProfileForm/ProfileForm';
-// import './../Index.css';
->>>>>>> master
+import { Link } from "react-router-dom";
 
 export interface ProfileProps {
   lastOvulation: string;
   duration: number;
   averageCycle: number;
+  logoutUser: Function;
 }
 
-const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
+const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle, logoutUser}) => {
   return (
     <main className='profile'>
-      <h1 className='headings test'>Profile</h1>
+      <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
         {/* <p>
          <span>Last Ovulation: </span> <br/>{lastOvulation}
@@ -29,7 +26,11 @@ const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle
         </p> */}
         <ProfileForm />
       </section>
-      <button className='logout-button'>Logout</button>
+      <Link to='/'>
+        <button className='logout-button' type='button'onClick={(event) => logoutUser(event)}>
+          Logout
+        </button>
+      </Link>
     </main>
   )
 }
