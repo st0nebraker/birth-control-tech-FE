@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MultiSelect from "react-multi-select-component";
 import './Form.scss';
+import { submitDay } from '../apiCalls';
 
 
 const Form: React.FC = () => {
@@ -35,8 +36,14 @@ const Form: React.FC = () => {
 		setToday(mm + '/' + dd + '/' + yyyy);
 	}
 
-	const handleSubmit = () => {
-		//submit logic
+	const handleSubmit = async (event: any) => {
+		event.preventDefault();
+		try {
+			const data = await submitDay(temp, today)
+			console.log(data);
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
   return (
@@ -46,9 +53,7 @@ const Form: React.FC = () => {
 				<label>Time:
 					<input 
 						type="time"
-						name="time" 
-						min="09:00" 
-						max="18:00" 
+						name="time"
 						style={{ width: '45%' }}
 						className='input'
 						onChange={e => setTime(e.target.value)}
@@ -57,13 +62,15 @@ const Form: React.FC = () => {
 				</label>
 				<label className='temp-label'>Temp:
 					<input
-					name="temp"
-					type="text"
-					placeholder='--'
-					value={temp}
-					className='input'
-					aria-label='temperature-input'
-					onChange={e => setTemp(e.target.value)} 
+						name="temp"
+						type="number"
+						min="90"
+						max="110"
+						placeholder='--'
+						value={temp}
+						className='input'
+						aria-label='temperature-input'
+						onChange={e => setTemp(e.target.value)} 
 					/>
 					<div className='BBT-deg'>°F</div>
 				</label>
@@ -76,7 +83,14 @@ const Form: React.FC = () => {
 						className='multi-select'
 					/>
 				</label>
-				<input type='submit' value='SUBMIT' className='submit' />
+				<button
+					className='submit'
+					type='button'
+					onClick={handleSubmit}
+				>
+					SUBMIT
+				</button>
+				{/* <input type='submit' value='SUBMIT' className='submit' /> */}
 			</form>
 
 		</main>
