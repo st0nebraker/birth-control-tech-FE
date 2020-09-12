@@ -23,41 +23,41 @@ const ProfileForm: React.FC = () => {
 	}
 
   return (
-			<form>
-				<label className='profile-input'>First Day of Your Last Period:
+			<form className='profile-form'>
+				<label className='profile-label'>First Day of Your Last Period:</label>
 					<input
-					name='lastOvulation'
+          name='lastOvulation'
+          className='profile-input'
 					type='date'
 					placeholder='mm/dd/yyyy'
 					value={lastOvulation}
 					aria-label='last-ovulation-input'
 					onChange={e => setLastOvulation(e.target.value)} 
 				  />
-				</label>
-        <label className='profile-input'>Average Cycle Length:
+        <label className='profile-label'>Average Cycle Length:</label>
 					<input
-					name='avgCycleLength'
+          name='avgCycleLength'
+          className='profile-input'
 					type='number'
 					placeholder='0'
 					value={avgCycleLength}
-					aria-label='average-cycle-length-input'
+					aria-label='average-cycle-length-label'
 					onChange={e => setAvgCycleLength(e.target.value)} 
 					/>
-				</label>
-        <label className='profile-input'>Average Period Length:
+        <label className='profile-label'>Average Period Length:</label>
 					<input
-					name='avgPeriodLength'
+          name='avgPeriodLength'
+          className='profile-input'
 					type='number'
 					placeholder='0'
 					value={avgPeriodLength}
 					aria-label='average-period-length-input'
 					onChange={e => setAvgPeriodLength(e.target.value)} 
 					/>
-				</label>
 				<button 
           onClick={handleSubmit}
           type='button'
-          className='form-button'
+          className='profile-button'
         >
           Submit
         </button>

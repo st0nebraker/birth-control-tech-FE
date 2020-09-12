@@ -12,7 +12,7 @@ export interface ProfileProps {
 const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
   return (
     <main className='profile'>
-      <h1 className='headings'>Profile</h1>
+      <h1 className='headings test'>Profile</h1>
       <section className='profile-container'>
         {/* <p>
          <span>Last Ovulation: </span> <br/>{lastOvulation}
@@ -23,7 +23,7 @@ const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle
         <p>
          <span>Average Cycle Length: </span> <br/>{averageCycle} Days
         </p> */}
-      <ProfileForm />
+        <ProfileForm />
       </section>
       <button className='logout-button'>Logout</button>
     </main>

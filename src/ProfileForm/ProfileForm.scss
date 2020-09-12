@@ -1,3 +1,37 @@
-.profile-input {
+.profile-form {
+  display: flex;
+	flex-direction: column;
+  justify-content: space-evenly;
+  height: 55vh;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.profile-label {
   font-size: 2.5vh;
 }
+
+.profile-input {
+  width: fit-content;
+  padding: 1%;
+  margin-top: -10%;
+  background-color: #3F657D;
+	border: solid 1px #3F657D;
+  border-radius: 3px;
+  color: #FFF6E9;
+  font-size: .4em;
+}
+
+.profile-button {
+  border-radius: 10px;
+  width: 60%;
+  height: 8%;
+  font-family: 'Capriola', sans-serif;
+  border: none;
+  font-size: 2.5vh;
+  background-color: #7582C8;
+  color: #FFF6E9;
+  align-self: center;
+}
+
