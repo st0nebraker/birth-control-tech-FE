@@ -9,7 +9,7 @@ const CalendarPage = () => {
   const [givenDate, setDate] = useState<Date>(new Date());
   
   return(
-   <main className='calendar'>
+   <main className='Main-User-View'>
      <h1 className='headings'>Calendar</h1>
      <section className='calendar-container'>
       <Calendar

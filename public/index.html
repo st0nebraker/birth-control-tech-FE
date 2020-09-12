@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/lono_f.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -26,10 +26,48 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Lono</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<script>
+			// if ('serviceWorker' in navigator) {
+			// 	navigator.serviceWorker.register('custom-service-worker.js');
+			// 	navigator.serviceWorker.ready.then(registration => {
+			// 		if ('PushManager' in window) {
+			// 			registerForPush(registration.pushManager);
+			// 		}
+			// 	})
+			// }
+
+			// function registerForPush(pushManager) {
+			// 	const options = {
+			// 		userVisibleOnly: true,
+			// 		applicationServerKey: new Uint8Array([4, 75, 66, 52, 157, 10, 179, 163, 231, 56, 172, 193, 160, 74, 175, 135, 207, 126, 19, 15, 205, 125, 7, 25, 17, 36, 237, 115, 27, 171, 110, 222, 23, 107, 136, 135, 49, 174, 95, 66, 12, 41, 221, 10, 82, 196, 110, 173, 168, 25, 132, 197, 101, 171, 77, 243, 119, 150, 118, 86, 122, 6, 244])
+			// 	}
+
+			// 	pushManager.subscribe(options)
+			// 		.then(subscription => console.log(subscription.toJSON()))
+			// 		.catch(error => console.log(error))
+			// }
+
+			async function showNotification() {
+				const result = await Notification.requestPermission();
+				if (result === 'granted') {
+					console.log(new Date().getHours())
+					if (new Date().getHours() === 12) {
+						const noti = new Notification('Alert', {
+							body: 'Don\'t forget to take your temperature first thing this morning!',
+							icon: 'lono_f.png'
+						});
+
+					}
+					noti.onclick = () => alert('clicked');
+				}
+			}
+
+			showNotification();
+		</script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
