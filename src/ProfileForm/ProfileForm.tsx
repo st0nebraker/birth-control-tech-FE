@@ -39,7 +39,7 @@ const ProfileForm: React.FC = () => {
           name='avgCycleLength'
           className='profile-input'
 					type='number'
-					placeholder='0'
+					placeholder='28 Days'
 					value={avgCycleLength}
 					aria-label='average-cycle-length-label'
 					onChange={e => setAvgCycleLength(e.target.value)} 
@@ -49,7 +49,7 @@ const ProfileForm: React.FC = () => {
           name='avgPeriodLength'
           className='profile-input'
 					type='number'
-					placeholder='0'
+					placeholder='7 Days'
 					value={avgPeriodLength}
 					aria-label='average-period-length-input'
 					onChange={e => setAvgPeriodLength(e.target.value)} 
