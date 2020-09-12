@@ -1,14 +1,3 @@
-// import React, { useState }from 'react';
-// import './ProfileFrom.scss';
-
-// const ProfileForm: React.FC = () => {
-//   const [ avgCycleLength, setAvgCycleLength ] = useState('');
-// 	const [ avgPeriodLength, setAvgPeriodLength ] = useState('');
-// 	const [ lastOvulation, setLastOvulation ] = useState('');
-// }
-
-// export default ProfileForm;
-
 import React, { useEffect, useState } from 'react';
 import './ProfileForm.scss';
 
@@ -30,7 +19,8 @@ const ProfileForm: React.FC = () => {
 					type='date'
 					placeholder='mm/dd/yyyy'
 					value={lastOvulation}
-					aria-label='last-ovulation-input'
+          aria-label='last-ovulation-input'
+          data-testid='date'
 					onChange={e => setLastOvulation(e.target.value)} 
 				  />
         <label>Average Cycle Length:</label>

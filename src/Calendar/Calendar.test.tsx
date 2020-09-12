@@ -10,14 +10,14 @@ describe('Calendar', () => {
       <MemoryRouter>
         <Calendar />
       </MemoryRouter>
-    )
+    );
 
-    const title = getByText('Calendar')
-    const dayOfWeek = getByText('Mon')
-    const dayNum = getByText('12')
+    const title = getByText('Calendar');
+    const dayOfWeek = getByText('Mon');
+    const dayNum = getByText('12');
     
     expect(title).toBeInTheDocument();
     expect(dayOfWeek).toBeInTheDocument();
     expect(dayNum).toBeInTheDocument();
-  })
-})
+  });
+});
