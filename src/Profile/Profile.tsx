@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+import './Profile.scss';
 import ProfileForm from '../ProfileForm/ProfileForm';
 // import './../Index.css';
 
