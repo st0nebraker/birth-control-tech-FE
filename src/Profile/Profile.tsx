@@ -1,5 +1,6 @@
 import React from 'react';
-import './Profile.css';
+import './Profile.scss';
+import ProfileForm from '../ProfileForm/ProfileForm';
 // import './../Index.css';
 
 export interface ProfileProps {
@@ -11,9 +12,9 @@ export interface ProfileProps {
 const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle}) => {
   return (
     <main className='profile'>
-      <h1 className='headings'>Profile</h1>
+      <h1 className='headings test'>Profile</h1>
       <section className='profile-container'>
-        <p>
+        {/* <p>
          <span>Last Ovulation: </span> <br/>{lastOvulation}
         </p>
         <p>
@@ -21,7 +22,8 @@ const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle
         </p>
         <p>
          <span>Average Cycle Length: </span> <br/>{averageCycle} Days
-        </p>
+        </p> */}
+        <ProfileForm />
       </section>
       <button className='logout-button'>Logout</button>
     </main>
