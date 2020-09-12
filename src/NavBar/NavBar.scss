@@ -2,106 +2,78 @@
 	background-image: url('../assets/home.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .home-active {
 	background-image: url('../assets/home-filled.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .calendar-icon {
 	background-image: url('../assets/calendar.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .calendar-active {
 	background-image: url('../assets/calendar-filled.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .new {
 	background-image: url('../assets/new.svg');
 	width: 19%;
 	height: 70px;
-	min-width: 70px;
-	max-width: 70px;
-	margin-bottom: 2%;
+	background-repeat: no-repeat;
 }
 
 .new-active {
 	background-image: url('../assets/new-filled.svg');
 	width: 19%;
 	height: 70px;
-	min-width: 70px;
-	max-width: 70px;
-	margin-bottom: 2%;
+	background-repeat: no-repeat;
 }
 
 .chart {
 	background-image: url('../assets/chart.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .chart-active {
 	background-image: url('../assets/chart-filled.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .profile-icon {
 	background-image: url('../assets/profile.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .profile-active {
 	background-image: url('../assets/profile-filled.svg');
 	width: 14%;
 	height: 100%;
-	min-width: 50px;
-	max-width: 50px;
-	max-height: 50px;
+	background-repeat: no-repeat;
 	margin-top: 6%;
-	margin-bottom: 6%;
 }
 
 .info {
@@ -110,10 +82,12 @@
 	height: 52%;
 	min-width: 30px;
 	min-height: 30px;
+	background-repeat: no-repeat;
 }
 
 .info-active {
 	background-image: url('../assets/info-filled.svg');
 	width: 8%;
 	height: 52%;
+	background-repeat: no-repeat;
 }

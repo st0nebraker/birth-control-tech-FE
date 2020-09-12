@@ -18,7 +18,10 @@ const Login: React.SFC<LoginProps> = (props) => {
 
   return (
     <section className="Main-User-View login-wrapper">
-      <div className='app-icon' title='logo'></div>
+      <div className='app-icon' title='logo'>
+				<img src={require('../lono_f.png')} alt="Logo" className='logo' title="Logo" />
+				<p style={{ fontFamily: 'Capriola', margin: '0', fontSize: '4.6vh' }}>Lono</p>
+			</div>
       <form className="login-form">
 				<label className='form-input'>
 					Name:

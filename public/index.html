@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/lono_f.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -26,7 +26,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Lono</title>
   </head>
   <body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
@@ -51,21 +51,22 @@
 			// 		.catch(error => console.log(error))
 			// }
 
-			// async function showNotification() {
-			// 	const result = await Notification.requestPermission();
-			// 	if (result === 'granted') {
-			// 		if (new Date().getHours() > 12) {
-			// 			const noti = new Notification('Hello!', {
-			// 				body: 'Don\'t forget to take your temperature first thing this morning!',
-			// 				icon: 'favicon.ico'
-			// 			});
+			async function showNotification() {
+				const result = await Notification.requestPermission();
+				if (result === 'granted') {
+					console.log(new Date().getHours())
+					if (new Date().getHours() === 12) {
+						const noti = new Notification('Alert', {
+							body: 'Don\'t forget to take your temperature first thing this morning!',
+							icon: 'lono_f.png'
+						});
 
-			// 		}
-			// 		noti.onclick = () => alert('clicked');
-			// 	}
-			// }
+					}
+					noti.onclick = () => alert('clicked');
+				}
+			}
 
-			// showNotification();
+			showNotification();
 		</script>
     <div id="root"></div>
     <!--
