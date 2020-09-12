@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h1 {
+    margin-bottom: 2%;
+  }
 }
 
 .profile-container {
@@ -17,14 +21,14 @@
   align-items: center;
   background-color: #172A35;
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
 }
 
 .logout-button {
   border-radius: 10px;
   width: 60%;
   height: 8%;
-  margin: 12%;
+  margin: 8%;
   font-family: 'Capriola', sans-serif;
   border: none;
   font-size: 2.5vh;
