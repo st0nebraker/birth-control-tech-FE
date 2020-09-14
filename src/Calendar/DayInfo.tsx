@@ -13,7 +13,6 @@ const DayInfo: React.SFC<DayInfoProps> = (props) => {
 
   return(
 		<section className='day-info-container'>
-			{console.log(foundDate)}
 			 {foundDate && foundDate.highRisk &&
 					<div className='day-info'>
 						<div className='date-head'>{foundDate.Date}</div>
