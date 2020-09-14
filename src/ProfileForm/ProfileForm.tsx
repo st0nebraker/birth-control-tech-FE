@@ -54,4 +54,5 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData }) => {
 			</form>
   )
 }
+
 export default ProfileForm;
