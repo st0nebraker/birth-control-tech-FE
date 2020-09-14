@@ -7,17 +7,18 @@ import { userDetails } from '../App/App';
 export interface ProfileProps {
   logoutUser: Function;
   postUserData: Function;
-  userData: userDetails[];
+	userData: userDetails[];
+	username: string;
   error: string;
 }
 
-const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, error}) => {
+const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, username, error}) => {
   return (
     <main className='profile'>
       <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
         {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
-        {!error && userData.length > 0 &&  (
+        {!error && userData.find(x => x.name === username) &&  (
           <>
             <p>
             <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
@@ -30,7 +31,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, e
             </p>
           </>)
         }
-        {!error && !userData.length && <ProfileForm postUserData={postUserData}/>}
+        {!error && !userData.find(x => x.name === username) && <ProfileForm postUserData={postUserData}/>}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>

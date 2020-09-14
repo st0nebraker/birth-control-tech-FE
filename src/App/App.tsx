@@ -21,30 +21,29 @@ export interface userDetails {
 	start_date: string,
 	avg_length: number,
 	avg_cycle: number,
+	name: string
 }
 
 const App = () => {
 	const [ username, setUsername ] = useState('');
 	const [ loggedIn, setLoggedIn ] = useState(false);
-
 	const [ days, setDays ] = useState<Days[]>([]);
-
 	const logoutUser= () => {
 		setUsername('')
 		setLoggedIn(false)
 	}
-
-	useEffect(() => {getUserDays()}, []);
 	const [ userData, setUserData ] = useState<userDetails[]>([
 		{
 			start_date: '',
 			avg_length: 0,
 			avg_cycle: 0,
+			name: ''
 		}
 	])
 	const [ error, setError ] = useState("");
-
+	
 	useEffect(() => {getUserDetails()}, [userData]);
+	useEffect(() => {getUserDays()}, []);
 	
 	const getUserDetails = async (): Promise<any> => {
 		try {
@@ -217,12 +216,12 @@ const App = () => {
 				highRisk: true
 			}
 		])
-		// try {
-		// 	const data = await getDays();
-		// 	return setDays(data);
-		// } catch (error) {
-		// 	setError(error.toString());
-		// }
+		try {
+			const data = await getDays();
+			return setDays(data);
+		} catch (error) {
+			setError(error.toString());
+		}
 	}
 
   return (
@@ -238,7 +237,7 @@ const App = () => {
 				/>
 				<Route 
 					path='/profile'
-					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error}/>}
+					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error} username={username} />}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />
