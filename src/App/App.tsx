@@ -9,6 +9,7 @@ import Login from '../Login/Login'
 import Profile from '../Profile/Profile';
 import Form from '../Form/Form';
 import Calendar from '../Calendar/Calendar';
+import { getUserData, submitUserData } from "../apiCalls";
 import './App.css';
 
 const App = () => {
@@ -23,6 +24,17 @@ const App = () => {
 		setLoggedIn(false)
 	}
 
+	useEffect(() => {getUserData()}, []);
+
+	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
+		try {
+			const data = await submitUserData(startDate, avgLength, avgCycle)
+			console.log(data);
+		} catch (error) {
+			console.log(error)
+		}
+	}
+
   return (
     <main className="App">
 			{loggedIn && <InfoTag username={username}/>}
@@ -33,7 +45,7 @@ const App = () => {
 				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
-					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle} logoutUser={logoutUser}/>}
+					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle} logoutUser={logoutUser} postUserData={postUserData}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />
