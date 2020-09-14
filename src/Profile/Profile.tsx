@@ -2,33 +2,38 @@ import React from 'react';
 import './Profile.scss';
 import ProfileForm from '../ProfileForm/ProfileForm';
 import { Link } from "react-router-dom";
+import { userDetails } from '../App/App';
 
 export interface ProfileProps {
-  lastOvulation: string;
-  duration: number;
-  averageCycle: number;
   logoutUser: Function;
   postUserData: Function;
+  userData: userDetails[];
 }
 
-const Profile: React.SFC<ProfileProps> = ({lastOvulation, duration, averageCycle, logoutUser, postUserData}) => {
+
+const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData}) => {
   return (
     <main className='profile'>
       <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
-        {/* <p>
-         <span>Last Ovulation: </span> <br/>{lastOvulation}
-        </p>
-        <p>
-         <span>Duration: </span> <br/>{duration} Days
-        </p>
-        <p>
-         <span>Average Cycle Length: </span> <br/>{averageCycle} Days
-        </p> */}
-        <ProfileForm postUserData={postUserData}/>
+        {userData.length > 0 &&  (
+          <>
+            <p>
+            <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
+            </p>
+            <p>
+            <span>Duration: </span> <br/>{userData[userData.length-1].avg_length} Days
+            </p>
+            <p>
+            <span>Average Cycle Length: </span> <br/>{userData[userData.length-1].avg_cycle} Days
+            </p>
+          </>
+        )
+      }
+       {!userData.length && <ProfileForm postUserData={postUserData}/>}
       </section>
       <Link to='/'>
-        <button className='logout-button' type='button'onClick={(event) => logoutUser(event)}>
+        <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>
           Logout
         </button>
       </Link>

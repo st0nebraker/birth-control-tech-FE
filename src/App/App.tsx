@@ -12,27 +12,48 @@ import Calendar from '../Calendar/Calendar';
 import { getUserData, submitUserData } from "../apiCalls";
 import './App.css';
 
+export interface userDetails {
+	start_date: string,
+	avg_length: number,
+	avg_cycle: number,
+}
+
 const App = () => {
 	const [ username, setUsername ] = useState('');
 	const [ loggedIn, setLoggedIn ] = useState(false);
-	const [lastOvulation, setLastOvulation] = useState('08-01-2020');
-  const [duration, setDuration] = useState(7);
-	const [averageCycle, setAverageCycle] = useState(28);
+	const [userData, setUserData] = useState<userDetails[]>([
+		{
+			start_date: '',
+			avg_length: 0,
+			avg_cycle: 0,
+		}
+	])
+	const [error, setError] = useState("");
+
+	useEffect(() => {getUserDetails()}, [userData]);
 	
-	const logoutUser= () => {
-		setUsername('')
-		setLoggedIn(false)
+	const getUserDetails = async (): Promise<any> => {
+		try {
+			const data = await getUserData();
+			setUserData(data);
+			// return userData;
+		} catch (error) {
+			setError(error.toString());
+		}
 	}
 
-	useEffect(() => {getUserData()}, []);
 
 	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
 		try {
 			const data = await submitUserData(startDate, avgLength, avgCycle)
-			console.log(data);
 		} catch (error) {
-			console.log(error)
+			setError(error.toString());
 		}
+	}
+
+	const logoutUser= () => {
+		setUsername('')
+		setLoggedIn(false)
 	}
 
   return (
@@ -45,7 +66,7 @@ const App = () => {
 				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
-					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle} logoutUser={logoutUser} postUserData={postUserData}/>}
+					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />
