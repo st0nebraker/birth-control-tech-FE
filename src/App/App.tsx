@@ -66,7 +66,7 @@ const App = () => {
 				<Route path='/stats' component={Reports} />
 				<Route 
 					path='/profile'
-					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData}/>}
+					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />

@@ -8,14 +8,16 @@ export interface ProfileProps {
   logoutUser: Function;
   postUserData: Function;
   userData: userDetails[];
+  error: string;
 }
 
-const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData}) => {
+const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, error}) => {
   return (
     <main className='profile'>
       <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
-        {userData.length > 0 &&  (
+        {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
+        {!error && userData.length > 0 &&  (
           <>
             <p>
             <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
@@ -28,7 +30,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData}) 
             </p>
           </>)
         }
-        {!userData.length && <ProfileForm postUserData={postUserData}/>}
+        {!error && !userData.length && <ProfileForm postUserData={postUserData}/>}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>
