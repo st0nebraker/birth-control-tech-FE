@@ -5,7 +5,6 @@ import { Days } from '../App/App';
 import './Calendar.scss';
 import 'react-calendar/dist/Calendar.css'
 import moment from 'moment';
-// import { markTimeline } from 'console';
 
 export interface CalendarProps {
 	userDays: Days[];
@@ -18,7 +17,6 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 	const [ lowRisk, setLowRisk ] = useState<Days[]>();
 
 	useEffect(() => { parseRiskDays() }, [ userDays ])
-	// useEffect(() => { parseRiskDays() }, [])
 
 	const parseRiskDays = () => {
 		setHighRisk(userDays.filter(day => day.highRisk));
