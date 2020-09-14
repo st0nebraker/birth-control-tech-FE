@@ -10,10 +10,10 @@ export interface ReportsProps {
 	days: Days[]
 }
 
-const Reports: React.SFC<ReportsProps> = ({days}) => {
+const Reports: React.SFC<ReportsProps> = ({ days }) => {
 	const [charts, setCharts] = useState(['one', 'two', 'three', 'four'])
 
-	// setCharts([<Charts />])
+	const getLast7Days = days.slice(-7).map(day => day.Date)
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>

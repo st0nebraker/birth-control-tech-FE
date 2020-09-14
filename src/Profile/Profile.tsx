@@ -18,7 +18,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, u
       <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
         {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
-        {!error && userData.length > 8 &&  (
+        {!error && userData.length > 0 &&  (
           <>
             <p>
             <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
@@ -31,7 +31,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, u
             </p>
           </>)
         }
-        {!error && userData.length === 8 && <ProfileForm postUserData={postUserData} username={username}/>}
+        {!error && !userData.length && <ProfileForm postUserData={postUserData} username={username}/>}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>
