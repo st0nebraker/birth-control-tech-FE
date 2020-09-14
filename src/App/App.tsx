@@ -25,10 +25,8 @@ export interface userDetails {
 
 const App = () => {
 	const [ username, setUsername ] = useState('');
-	// const [ loggedIn, setLoggedIn ] = useState(false);
-	// const [ lastOvulation, setLastOvulation ] = useState('08-01-2020');
-  // const [ duration, setDuration ] = useState(7);
-	const [ averageCycle, setAverageCycle ] = useState(28);
+	const [ loggedIn, setLoggedIn ] = useState(false);
+
 	const [ days, setDays ] = useState<Days[]>([]);
 
 	const logoutUser= () => {
@@ -36,7 +34,6 @@ const App = () => {
 		setLoggedIn(false)
 	}
 
-	useEffect(() => {getUserData()}, []);
 	useEffect(() => {getUserDays()}, []);
 	const [ userData, setUserData ] = useState<userDetails[]>([
 		{
