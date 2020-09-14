@@ -10,7 +10,6 @@ export interface ProfileProps {
   userData: userDetails[];
 }
 
-
 const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData}) => {
   return (
     <main className='profile'>
@@ -27,10 +26,9 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData}) 
             <p>
             <span>Average Cycle Length: </span> <br/>{userData[userData.length-1].avg_cycle} Days
             </p>
-          </>
-        )
-      }
-       {!userData.length && <ProfileForm postUserData={postUserData}/>}
+          </>)
+        }
+        {!userData.length && <ProfileForm postUserData={postUserData}/>}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>

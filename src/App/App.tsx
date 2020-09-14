@@ -21,14 +21,14 @@ export interface userDetails {
 const App = () => {
 	const [ username, setUsername ] = useState('');
 	const [ loggedIn, setLoggedIn ] = useState(false);
-	const [userData, setUserData] = useState<userDetails[]>([
+	const [ userData, setUserData ] = useState<userDetails[]>([
 		{
 			start_date: '',
 			avg_length: 0,
 			avg_cycle: 0,
 		}
 	])
-	const [error, setError] = useState("");
+	const [ error, setError ] = useState("");
 
 	useEffect(() => {getUserDetails()}, [userData]);
 	
@@ -36,7 +36,6 @@ const App = () => {
 		try {
 			const data = await getUserData();
 			setUserData(data);
-			// return userData;
 		} catch (error) {
 			setError(error.toString());
 		}
@@ -46,6 +45,7 @@ const App = () => {
 	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
 		try {
 			const data = await submitUserData(startDate, avgLength, avgCycle)
+			return data
 		} catch (error) {
 			setError(error.toString());
 		}
