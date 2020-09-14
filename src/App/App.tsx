@@ -17,6 +17,11 @@ export interface Days {
 	Date: string,
 	highRisk: boolean
 }
+export interface userDetails {
+	start_date: string,
+	avg_length: number,
+	avg_cycle: number,
+}
 
 const App = () => {
 	const [ username, setUsername ] = useState('');
@@ -25,7 +30,6 @@ const App = () => {
   const [ duration, setDuration ] = useState(7);
 	const [ averageCycle, setAverageCycle ] = useState(28);
 	const [ days, setDays ] = useState<Days[]>([]);
-	const [ error, setError ] = useState("");
 
 	const logoutUser= () => {
 		setUsername('')
@@ -34,13 +38,32 @@ const App = () => {
 
 	useEffect(() => {getUserData()}, []);
 	useEffect(() => {getUserDays()}, []);
+	const [ userData, setUserData ] = useState<userDetails[]>([
+		{
+			start_date: '',
+			avg_length: 0,
+			avg_cycle: 0,
+		}
+	])
+	const [ error, setError ] = useState("");
+
+	useEffect(() => {getUserDetails()}, [userData]);
+	
+	const getUserDetails = async (): Promise<any> => {
+		try {
+			const data = await getUserData();
+			setUserData(data);
+		} catch (error) {
+			setError(error.toString());
+		}
+	}
 
 	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
 		try {
 			const data = await submitUserData(startDate, avgLength, avgCycle)
-			console.log(data);
+			return data
 		} catch (error) {
-			console.log(error)
+			setError(error.toString());
 		}
 	}
 
@@ -218,7 +241,7 @@ const App = () => {
 				/>
 				<Route 
 					path='/profile'
-					render={() => <Profile lastOvulation={lastOvulation} duration={duration} averageCycle={averageCycle} logoutUser={logoutUser} postUserData={postUserData}/>}
+					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />
