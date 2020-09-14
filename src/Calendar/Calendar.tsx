@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import DayInfo from './DayInfo'
 import Calendar from 'react-calendar';
 import { Days } from '../App/App';
 import './Calendar.scss';
@@ -20,7 +21,6 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 		setDayForDetails(userDays.find(day => day.Date === chosenDay.toString()));
 	}
 
-	//popup new component w/ that days fertility info
   return(
    <main className='calendar'>
      <h1 className='headings'>Calendar</h1>
@@ -30,6 +30,9 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
           value={givenDate}
           className='react-calendar'
         />
+			<DayInfo 
+				foundDay={dayForDetails}
+			/>
      </section>
    </main>
   );

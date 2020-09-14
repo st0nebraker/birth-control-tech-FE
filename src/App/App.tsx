@@ -25,9 +25,9 @@ export interface userDetails {
 
 const App = () => {
 	const [ username, setUsername ] = useState('');
-	const [ loggedIn, setLoggedIn ] = useState(false);
-	const [ lastOvulation, setLastOvulation ] = useState('08-01-2020');
-  const [ duration, setDuration ] = useState(7);
+	// const [ loggedIn, setLoggedIn ] = useState(false);
+	// const [ lastOvulation, setLastOvulation ] = useState('08-01-2020');
+  // const [ duration, setDuration ] = useState(7);
 	const [ averageCycle, setAverageCycle ] = useState(28);
 	const [ days, setDays ] = useState<Days[]>([]);
 
