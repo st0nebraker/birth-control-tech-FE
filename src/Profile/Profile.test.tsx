@@ -12,6 +12,7 @@ describe('ProfileForm', () => {
           logoutUser={Function}
           postUserData={Function}
           userData={[]}
+          username={''}
           error={''}
         />
       </MemoryRouter>
@@ -33,6 +34,7 @@ describe('ProfileForm', () => {
           logoutUser={mockLogoutUser}
           postUserData={Function}
           userData={[]}
+          username={''}
           error={''}
         />
       </MemoryRouter>

@@ -6,25 +6,27 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Reports.scss';
 
 import {Line} from 'react-chartjs-2';
+import {sevenDayGraph} from './Charts'
 export interface ReportsProps {
 	days: Days[]
 }
 
 const Reports: React.SFC<ReportsProps> = ({ days }) => {
-	const [charts, setCharts] = useState(['one', 'two', 'three', 'four'])
-
-	const getLast7Days = days.slice(-7).map(day => day.Date)
+	const [charts, setCharts] = useState([sevenDayGraph(days), sevenDayGraph(days), sevenDayGraph(days), sevenDayGraph(days)])
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
 			<p className='headings'>Reports</p>
+			{/* <Line data={charts[0]} /> */}
+
 			<Carousel>
 				{charts.map((chart, i) => {
 					return (
 						<div className='display-chart' key={i}>
 							{/* chart.image */}
-							<p>{chart}</p>
-							<p className="legend">Subtitle: info</p>
+							{/* <p>{chart}</p> */}
+							<Line data={chart} />
+							{/* <p className="legend">Subtitle: info</p> */}
 						</div>
 					)
 				})}
