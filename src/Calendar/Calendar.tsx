@@ -30,10 +30,10 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
           value={givenDate}
           className='react-calendar'
         />
+     </section>
 			<DayInfo 
 				foundDay={dayForDetails}
 			/>
-     </section>
    </main>
   );
 }

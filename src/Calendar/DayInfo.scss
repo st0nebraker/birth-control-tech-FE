@@ -1,0 +1,27 @@
+.day-info-container {
+	border-radius: 10px;
+	background-color: #172A35;
+	margin-top: 15px;
+	height: 10vh;
+	width: 85vw;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.day-info {
+	display: flex;
+	padding: 10px;
+	background-color: white;
+	color: #233C4C;
+	border-radius: 10px;
+	height: 40%;
+	width: 90%;
+	font-size: .7em;
+	font-family: 'Capriola', sans-serif;
+}
+
+.date-head {
+	font-size: 1.5em;
+}
