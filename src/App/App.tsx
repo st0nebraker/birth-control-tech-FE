@@ -55,9 +55,9 @@ const App = () => {
 		}
 	}
 
-	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
+	const postUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string): Promise<any> => {
 		try {
-			const data = await submitUserData(startDate, avgLength, avgCycle)
+			const data = await submitUserData(startDate, avgLength, avgCycle, username)
 			return data
 		} catch (error) {
 			setError(error.toString());
@@ -79,7 +79,7 @@ const App = () => {
 			<Switch>
 				<Route path='/info' component={Info} />
 				<Route path='/new-entry' 
-					render={() => <Form days={days}/>}
+					render={() => <Form days={days} getUserDays={getUserDays} />}
 				/>
 				<Route path='/stats' component={Reports} />
 				<Route 
@@ -91,7 +91,11 @@ const App = () => {
 					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error} username={username} />}
 				/>
 				{loggedIn && 
-					<Route exact path='/' component={Home} />
+					<Route 
+						exact
+						path='/'
+						render={() => <Home days={days} />} 
+					/>
 				}
 				{!loggedIn && 
 					<Route 

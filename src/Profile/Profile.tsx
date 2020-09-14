@@ -31,7 +31,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, u
             </p>
           </>)
         }
-        {!error && !userData.find(x => x.name === username) && <ProfileForm postUserData={postUserData}/>}
+        {!error && !userData.find(x => x.name === username) && <ProfileForm postUserData={postUserData} username={username} />}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>

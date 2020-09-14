@@ -3,17 +3,20 @@ import MultiSelect from "react-multi-select-component";
 import './Form.scss';
 import { Days } from '../App/App';
 import { submitDay } from '../apiCalls';
+import moment from 'moment';
 
 export interface FormProps {
 	days: Days[];
+	getUserDays: Function
 }
 
-const Form: React.FC<FormProps> = ({ days }) => {
+const Form: React.FC<FormProps> = ({ days, getUserDays }) => {
 	const [ today, setToday ] = useState('');
 	const [ temp, setTemp ] = useState('');
 	const [ time, setTime ] = useState('')
 	const [ selected, setSelected ] = useState([]);
 	const [ userDays, setUserDays ] = useState<Days[]>([]);
+	const [ confirmation, setConfirmation ] = useState(false);
 	const [ symptoms, setSymptoms ] = useState([
 		{label: 'Cramping', value: 'cramping'},
 		{label: 'Mood change', value: 'mood change'},
@@ -34,12 +37,7 @@ const Form: React.FC<FormProps> = ({ days }) => {
 	useEffect(() => { setUserDays(days) }, [ days ])
 
 	const getDate = () => {
-		var today = new Date();
-		var dd = String(today.getDate()).padStart(2, '0');
-		var mm = String(today.getMonth() + 1).padStart(2, '0');
-		var yyyy = today.getFullYear();
-
-		setToday(mm + '/' + dd + '/' + yyyy);
+		setToday(moment(new Date()).format("MM/DD/YYYY"));
 	}
 
 	const handleSubmit = async (event: any) => {
@@ -47,7 +45,8 @@ const Form: React.FC<FormProps> = ({ days }) => {
 		try {
 			const data = await submitDay(temp, today)
 			console.log(data);
-			//TODO: thanks for submission msg
+			setConfirmation(true);
+			getUserDays();
 		} catch (error) {
 			console.log(error)
 		}
@@ -143,9 +142,10 @@ const Form: React.FC<FormProps> = ({ days }) => {
 						className='submit'
 						type='button'
 						onClick={handleSubmit}
-					>
+						>
 						SUBMIT
 					</button>
+					{confirmation && <div style={{ fontStyle: 'italic', color: '#FBCE90', fontSize: '.8em', marginLeft: '17%' }}>Entry submitted</div>}
 				</form>
 			}
 		</main>

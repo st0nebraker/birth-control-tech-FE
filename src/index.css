@@ -90,3 +90,17 @@ nav {
 	text-align: left;
 	line-height: 1.6;
 }
+
+.welcome-msg {
+	color: #FFF6E9;
+	font-family: 'Capriola', sans-serif;
+	font-size: 2.8vh;
+	background-color: #172A35;
+	border-radius: 10px;
+	width: 80vw;
+	height: 15vh;
+	margin-left: 5%;
+	padding-top: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
