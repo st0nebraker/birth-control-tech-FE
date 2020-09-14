@@ -19,32 +19,25 @@ export interface Days {
 }
 export interface userDetails {
 	start_date: string,
-	avg_length: number,
+	avg_period: number,
 	avg_cycle: number,
 }
 
 const App = () => {
 	const [ username, setUsername ] = useState('');
 	const [ loggedIn, setLoggedIn ] = useState(false);
-
 	const [ days, setDays ] = useState<Days[]>([]);
-
-	const logoutUser= () => {
-		setUsername('')
-		setLoggedIn(false)
-	}
-
-	useEffect(() => {getUserDays()}, []);
 	const [ userData, setUserData ] = useState<userDetails[]>([
 		{
 			start_date: '',
-			avg_length: 0,
+			avg_period: 0,
 			avg_cycle: 0,
 		}
 	])
 	const [ error, setError ] = useState("");
-
+	
 	useEffect(() => {getUserDetails()}, [userData]);
+	useEffect(() => {getUserDays()}, []);
 	
 	const getUserDetails = async (): Promise<any> => {
 		try {
@@ -55,13 +48,18 @@ const App = () => {
 		}
 	}
 
-	const postUserData = async (startDate: string, avgLength: number, avgCycle: number): Promise<any> => {
+	const postUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string): Promise<any> => {
 		try {
-			const data = await submitUserData(startDate, avgLength, avgCycle)
-			return data
+			const data = await submitUserData(startDate, avgLength, avgCycle, username);
+			return data;
 		} catch (error) {
 			setError(error.toString());
 		}
+	}
+
+	const logoutUser= () => {
+		setUsername('');
+		setLoggedIn(false);
 	}
 
 	const getUserDays = async () => {
@@ -231,14 +229,17 @@ const App = () => {
 			<Switch>
 				<Route path='/info' component={Info} />
 				<Route path='/new-entry' component={Form} />
-				<Route path='/stats' component={Reports} />
+				<Route 
+					path='/stats' 
+					render={() => <Reports days={days}/>}
+				/>
 				<Route 
 					path='/calendar' 
 					render={() => <Calendar userDays={days}/>} 
 				/>
 				<Route 
 					path='/profile'
-					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} error={error}/>}
+					render={() => <Profile userData={userData} logoutUser={logoutUser} postUserData={postUserData} username={username} error={error}/>}
 				/>
 				{loggedIn && 
 					<Route exact path='/' component={Home} />

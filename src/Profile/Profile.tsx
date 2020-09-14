@@ -8,29 +8,30 @@ export interface ProfileProps {
   logoutUser: Function;
   postUserData: Function;
   userData: userDetails[];
+  username: string;
   error: string;
 }
 
-const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, error}) => {
+const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, username, error}) => {
   return (
     <main className='profile'>
       <h1 className='headings'>Profile</h1>
       <section className='profile-container'>
         {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
-        {!error && userData.length > 0 &&  (
+        {!error && userData.length > 8 &&  (
           <>
             <p>
             <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
             </p>
             <p>
-            <span>Duration: </span> <br/>{userData[userData.length-1].avg_length} Days
+            <span>Duration: </span> <br/>{userData[userData.length-1].avg_period} Days
             </p>
             <p>
             <span>Average Cycle Length: </span> <br/>{userData[userData.length-1].avg_cycle} Days
             </p>
           </>)
         }
-        {!error && !userData.length && <ProfileForm postUserData={postUserData}/>}
+        {!error && userData.length === 8 && <ProfileForm postUserData={postUserData} username={username}/>}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>

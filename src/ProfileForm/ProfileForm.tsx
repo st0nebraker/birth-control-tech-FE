@@ -3,16 +3,17 @@ import './ProfileForm.scss';
 
 export interface ProfileFormProps {
   postUserData: Function;
+  username: string;
 }
 
-const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData }) => {
+const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) => {
 	const [ lastOvulation, setLastOvulation ] = useState('');
   const [ avgCycleLength, setAvgCycleLength ] = useState('');
 	const [ avgPeriodLength, setAvgPeriodLength ] = useState('');
 
 	const handleSubmit = async (event: any) => {
     event.preventDefault();
-    postUserData(lastOvulation, avgCycleLength, avgPeriodLength)
+    postUserData(lastOvulation, avgCycleLength, avgPeriodLength, username)
 	}
 
   return (

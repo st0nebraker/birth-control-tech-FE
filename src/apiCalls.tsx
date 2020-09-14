@@ -41,14 +41,15 @@ export const getUserData = async () => {
 	}
 }
 
-export const submitUserData = async (startDate: string, avgLength: number, avgCycle: number) => {
+export const submitUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string) => {
 	const response = await fetch(`${rootUrl}/user_data`, {
 		method: 'POST',
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
 			"start_date": startDate,
-			"avg_length": avgLength,
+			"avg_period": avgLength,
 			"avg_cycle": avgCycle,
+			"name": username,
 		})
 	});
 

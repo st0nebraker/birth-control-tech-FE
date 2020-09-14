@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
+import { Days } from '../App/App';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Reports.scss';
 
-const Reports = () => {
+import {Line} from 'react-chartjs-2';
+export interface ReportsProps {
+	days: Days[]
+}
+
+const Reports: React.SFC<ReportsProps> = ({days}) => {
 	const [charts, setCharts] = useState(['one', 'two', 'three', 'four'])
+
+	// setCharts([<Charts />])
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
