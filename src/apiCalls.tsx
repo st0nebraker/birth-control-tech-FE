@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const rootUrl= 'https://lono-api.herokuapp.com/api/v1'
 
 export const submitDay = async (temp: number, date: string, username: string) => {
@@ -48,7 +50,7 @@ export const submitUserData = async (startDate: string, avgLength: number, avgCy
 		method: 'POST',
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
-			"start_date": startDate,
+			"start_date": moment(startDate).format("MM/DD/YYYY"),
 			"avg_period": avgLength,
 			"avg_cycle": avgCycle,
 			"name": username

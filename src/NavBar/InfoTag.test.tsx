@@ -7,7 +7,7 @@ import InfoTag from './InfoTag';
 describe('InfoTag', () => {
 	it("Should display the home icon", () => {
 		const { getByTitle } = render(
-			<MemoryRouter><InfoTag /></MemoryRouter>
+			<MemoryRouter><InfoTag username={'Alex'}/></MemoryRouter>
 		)
 		
 		const infoIcon = getByTitle('info tag')

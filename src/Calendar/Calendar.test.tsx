@@ -8,7 +8,9 @@ describe('Calendar', () => {
   it('should display a title and a calendar', () => {
     const { getByText } = render(
       <MemoryRouter>
-        <Calendar />
+        <Calendar 
+          userDays={[]}
+        />
       </MemoryRouter>
     );
 
