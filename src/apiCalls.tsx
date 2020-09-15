@@ -1,12 +1,13 @@
 const rootUrl= 'https://lono-api.herokuapp.com/api/v1'
 
-export const submitDay = async (temp: string, date: string) => {
+export const submitDay = async (temp: string, date: string, username: string) => {
 	const response = await fetch(`${rootUrl}/days`, {
 		method: 'POST',
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
 			"temperature": temp,
 			"date": date,
+			"name": username
 		})
 	});
 

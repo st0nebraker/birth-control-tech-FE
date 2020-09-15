@@ -47,11 +47,16 @@ const App = () => {
 	}
 
 	const getUserDetails = async (): Promise<any> => {
-		try {
-			const data = await getUserData();
-			setUserData(data);
-		} catch (error) {
-			setError(error.toString());
+		console.log(userData)
+		if (userData.length === 1) {
+		//TODO: w/o the if we have an infinite loop
+		//but w/ it, a new user can't submit profile info for 1st time
+			try {
+				const data = await getUserData();
+				setUserData(data);
+			} catch (error) {
+				setError(error.toString());
+			}
 		}
 	}
 
@@ -65,6 +70,39 @@ const App = () => {
 	}
 
 	const getUserDays = async () => {
+		// setDays([
+		// 	{
+		// 		temperature: 97.3921407225235,
+		// 		date: '09/01/2020',
+		// 		high_risk: false
+		// 	},
+		// 	{
+		// 		temperature: 97.45472336125859,
+		// 		date: '09/02/2020',
+		// 		high_risk: false
+		// 	},
+		// 	{
+		// 		temperature: 97.37539305082102,
+		// 		date: '09/03/2020',
+		// 		high_risk: false
+		// 	},
+		// 	{
+		// 		temperature: 97.39594321187163,
+		// 		date: '09/04/2020',
+		// 		high_risk: false
+		// 	},
+		// 	{ 
+		// 		temperature: 97.22967507338001,
+		// 		date: '09/05/2020',
+		// 		high_risk: false
+		// 	},
+		// 	{ 
+		// 		temperature: 97.15550167462081,
+		// 		date: '09/06/2020',
+		// 		high_risk: false
+		// 	}
+		// ])
+
 		try {
 			const data = await getDays();
 			return setDays(data);
@@ -79,7 +117,7 @@ const App = () => {
 			<Switch>
 				<Route path='/info' component={Info} />
 				<Route path='/new-entry' 
-					render={() => <Form days={days} getUserDays={getUserDays} />}
+					render={() => <Form days={days} getUserDays={getUserDays} userDetails={userData} username={username} />}
 				/>
 				<Route path='/stats' component={Reports} />
 				<Route 
@@ -94,7 +132,7 @@ const App = () => {
 					<Route 
 						exact
 						path='/'
-						render={() => <Home days={days} />} 
+						render={() => <Home days={days} userDetails={userData} username={username} />} 
 					/>
 				}
 				{!loggedIn && 
