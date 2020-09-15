@@ -16,7 +16,7 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 	const [ highRisk, setHighRisk ] = useState<Days[]>();
 	const [ lowRisk, setLowRisk ] = useState<Days[]>();
 
-	useEffect(() => { parseRiskDays() }, [ userDays ])
+	useEffect(() => { parseRiskDays() }, [ userDays ]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const parseRiskDays = () => {
 		setHighRisk(userDays.filter(day => day.high_risk));
