@@ -37,7 +37,7 @@
     "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^9.5.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "workbox-build": "^5.1.4"
   }
 }
