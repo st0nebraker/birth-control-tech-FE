@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+notifications:
+  email: false
+deploy:
+  provider: netlify
+  site: https://lono.netlify.app/
+  auth: <encrypted auth>
+  edge: true 
