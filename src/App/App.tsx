@@ -40,11 +40,13 @@ const App = () => {
 	useEffect(() => {getUserDays()}, []);
 	
 	const getUserDetails = async (): Promise<any> => {
-		try {
-			const data = await getUserData();
-			setUserData(data);
-		} catch (error) {
-			setError(error.toString());
+		if (userData) {
+			try {
+				const data = await getUserData();
+				setUserData(data);
+			} catch (error) {
+				setError(error.toString());
+			}
 		}
 	}
 
