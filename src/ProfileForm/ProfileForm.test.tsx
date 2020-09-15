@@ -46,8 +46,8 @@ describe('ProfileForm', () => {
     const AvgCycleLengthInput = getByPlaceholderText('28 Days');
     const AvgPeriodLengthInput = getByPlaceholderText('7 Days');
 
-    // fireEvent.change(lastOvulationInput, {target: {value: '2020-09-01'}});
-    fireEvent.change(lastOvulationInput, {target: {value: '09/01/2020'}});
+    fireEvent.change(lastOvulationInput, {target: {value: '2020-09-01'}});
+    // fireEvent.change(lastOvulationInput, {target: {value: '09-01/2020'}});
     fireEvent.change(AvgCycleLengthInput, {target: {value: 21}});
     fireEvent.change(AvgPeriodLengthInput, {target: {value: 5}});
     

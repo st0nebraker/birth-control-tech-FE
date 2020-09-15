@@ -7,17 +7,17 @@ import Form from './Form';
 describe('Form', () => {
 	it("Should display user entry form date", () => {
 		const { getByText } = render(
-			<MemoryRouter><Form /></MemoryRouter>
+			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 		
-		const formDate = getByText('Today: 09/07/2020')
+		const formDate = getByText('Today: 10/31/2020')
 
 		expect(formDate).toBeInTheDocument();
 	})
 
 	it("Should display time input", () => {
 		const { getByText } = render(
-			<MemoryRouter><Form /></MemoryRouter>
+			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 
 		const inputTime = getByText('Time:')
@@ -27,7 +27,7 @@ describe('Form', () => {
 
 	it("Should display temperature input", () => {
 		const { getByText } = render(
-			<MemoryRouter><Form /></MemoryRouter>
+			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 
 		const tempInput = getByText('Temp:')
@@ -37,7 +37,7 @@ describe('Form', () => {
 
 	it("Should display symptoms dropdown menu", () => {
 		const { getByText } = render(
-			<MemoryRouter><Form /></MemoryRouter>
+			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 
 		const symptomeInput = getByText('Symptoms:')
@@ -47,7 +47,7 @@ describe('Form', () => {
 
 	it("Should display submit button", () => {
 		const { getByText } = render(
-			<MemoryRouter><Form /></MemoryRouter>
+			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 
 		const submitBtn = getByText('SUBMIT')

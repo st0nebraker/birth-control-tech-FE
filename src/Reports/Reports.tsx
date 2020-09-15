@@ -17,7 +17,7 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
 			<p className='headings'>Reports</p>
-			<Carousel>
+			<Carousel showThumbs={false}>
 				{charts.map((chart, i) => {
 					return (
 						<div className='display-chart' key={i}>

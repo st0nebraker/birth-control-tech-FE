@@ -7,7 +7,13 @@ import Home from './Home';
 describe('Home', () => {
 	it("Should display the home image", () => {
 		const { getByAltText } = render(
-			<MemoryRouter><Home /></MemoryRouter>
+			<MemoryRouter>
+				<Home 
+					days={[]}
+					userDetails={[]}
+					username={''}
+				/>
+			</MemoryRouter>
 		)
 		
 		const imageAltText = getByAltText('Papaya')
@@ -15,13 +21,21 @@ describe('Home', () => {
 		expect(imageAltText).toBeInTheDocument();
 	})
 
-	it("Should display the risk level for today", () => {
+	it.skip("Should prompt the user to fill out the profile form and today's temp", () => {
 		const { getByText } = render(
-			<MemoryRouter><Home /></MemoryRouter>
+			<MemoryRouter>
+				<Home 
+					days={[]}
+					userDetails={[]}
+					username={''}
+				/>
+			</MemoryRouter>
 		)
 		
-		const imageAltText = getByText('Today is a LOW-RISK day')
+		const profileText = getByText('Fill out the profile page to begin.')
+		const dailyInputText = getByText('Don\'t forget to log your basal body temp today!')
 
-		expect(imageAltText).toBeInTheDocument();
+		expect(profileText).toBeInTheDocument();
+		expect(dailyInputText).toBeInTheDocument();
 	})
 })
