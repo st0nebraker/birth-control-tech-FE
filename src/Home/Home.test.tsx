@@ -21,7 +21,7 @@ describe('Home', () => {
 		expect(imageAltText).toBeInTheDocument();
 	})
 
-	it.skip("Should prompt the user to fill out the profile form and today's temp", () => {
+	it("Should prompt the user to fill out the profile form and today's temp", () => {
 		const { getByText } = render(
 			<MemoryRouter>
 				<Home 
@@ -32,8 +32,8 @@ describe('Home', () => {
 			</MemoryRouter>
 		)
 		
-		const profileText = getByText('Fill out the profile page to begin.')
-		const dailyInputText = getByText('Don\'t forget to log your basal body temp today!')
+		const profileText = getByText(/Fill out the/)
+		const dailyInputText = getByText(/Don\'t forget to/)
 
 		expect(profileText).toBeInTheDocument();
 		expect(dailyInputText).toBeInTheDocument();
