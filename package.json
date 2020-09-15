@@ -30,11 +30,12 @@
     "react-scripts": "3.4.3",
     "react-time-picker": "^4.0.1",
     "serve": "^11.3.2",
+    "travis": "^0.1.1",
     "typescript": "^3.7.5"
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
