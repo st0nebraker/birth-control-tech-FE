@@ -12,6 +12,7 @@ export const submitDay = async (temp: string, date: string) => {
 
 	if (response.ok) {
 		const data = await response.json();
+		console.log(data);
 		return data;
 	} else {
 		throw new Error(response.statusText);
@@ -41,7 +42,7 @@ export const getUserData = async () => {
 	}
 }
 
-export const submitUserData = async (startDate: string, avgLength: number, avgCycle: number) => {
+export const submitUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string) => {
 	const response = await fetch(`${rootUrl}/user_data`, {
 		method: 'POST',
 		headers: { "Content-Type": "application/json" },
@@ -49,6 +50,7 @@ export const submitUserData = async (startDate: string, avgLength: number, avgCy
 			"start_date": startDate,
 			"avg_length": avgLength,
 			"avg_cycle": avgCycle,
+			"name": username
 		})
 	});
 

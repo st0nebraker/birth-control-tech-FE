@@ -13,15 +13,15 @@ const DayInfo: React.SFC<DayInfoProps> = (props) => {
 
   return(
 		<section className='day-info-container'>
-			 {foundDate && foundDate.highRisk &&
+			 {foundDate && foundDate.high_risk &&
 					<div className='day-info'>
-						<div className='date-head'>{foundDate.Date}</div>
+						<div className='date-head'>{foundDate.date}</div>
 						<div style={{ textAlign: 'left', marginLeft: '10px' }}><span style={{ color: 'red' }}>High risk</span> fertility day, consider using other forms of birth control.</div>
 					</div>
 			 }
-			 {foundDate && !foundDate.highRisk &&
+			 {foundDate && !foundDate.high_risk &&
 					<div className='day-info'>
-						<div className='date-head'>{foundDate.Date}</div>
+						<div className='date-head'>{foundDate.date}</div>
 						<div style={{ textAlign: 'left', marginLeft: '10px' }}><span style={{ color: 'green' }}>Low risk</span> fertility day, your chances of pregnancy are very low.</div>
 					</div>
 			 }
