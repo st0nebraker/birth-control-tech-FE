@@ -19,8 +19,8 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 	useEffect(() => { parseRiskDays() }, [ userDays ])
 
 	const parseRiskDays = () => {
-		setHighRisk(userDays.filter(day => day.highRisk));
-		setLowRisk(userDays.filter(day => !day.highRisk));
+		setHighRisk(userDays.filter(day => day.high_risk));
+		setLowRisk(userDays.filter(day => !day.high_risk));
 	}
 
 	const clickedDayInfo = (e: any) => {
@@ -28,7 +28,7 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 		const mm = String(e.getMonth() + 1).padStart(2, '0');
 		const yyyy = e.getFullYear();
 		const chosenDay = `${mm}/${dd}/${yyyy}`;
-		setDayForDetails(userDays.find(day => day.Date === chosenDay.toString()));
+		setDayForDetails(userDays.find(day => day.date === chosenDay.toString()));
 	}
 
   return(
@@ -40,9 +40,9 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
           value={givenDate}
 					className='react-calendeda798ar'
 					tileClassName={({ date, view }) => {
-						if (highRisk && highRisk.find(x => x.Date === moment(date).format("MM/DD/YYYY"))) {
+						if (highRisk && highRisk.find(x => x.date === moment(date).format("MM/DD/YYYY"))) {
 							return 'red-risk';	
-						} else if (lowRisk && lowRisk.find(x => x.Date === moment(date).format("MM/DD/YYYY"))) {
+						} else if (lowRisk && lowRisk.find(x => x.date === moment(date).format("MM/DD/YYYY"))) {
 							return 'green-risk';	
 						} else {
 							return 'react-calendar'

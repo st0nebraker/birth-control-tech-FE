@@ -12,6 +12,7 @@ export const submitDay = async (temp: string, date: string) => {
 
 	if (response.ok) {
 		const data = await response.json();
+		console.log(data);
 		return data;
 	} else {
 		throw new Error(response.statusText);
@@ -49,7 +50,7 @@ export const submitUserData = async (startDate: string, avgLength: number, avgCy
 			"start_date": startDate,
 			"avg_period": avgLength,
 			"avg_cycle": avgCycle,
-			"name": username,
+			"name": username
 		})
 	});
 

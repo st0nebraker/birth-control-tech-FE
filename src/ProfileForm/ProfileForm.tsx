@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './ProfileForm.scss';
 
 export interface ProfileFormProps {
-  postUserData: Function;
-  username: string;
+	postUserData: Function;
+	username: string
 }
 
 const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) => {
