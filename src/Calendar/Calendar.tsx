@@ -5,6 +5,7 @@ import { Days } from '../App/App';
 import './Calendar.scss';
 import 'react-calendar/dist/Calendar.css'
 import moment from 'moment';
+import Collapsible from 'react-collapsible';
 
 export interface CalendarProps {
 	userDays: Days[];
