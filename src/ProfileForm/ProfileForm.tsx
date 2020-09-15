@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './ProfileForm.scss';
-import moment from 'moment';
-
 export interface ProfileFormProps {
 	postUserData: Function;
 	username: string

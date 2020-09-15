@@ -11,7 +11,7 @@ export interface ReportsProps {
 }
 
 const Reports: React.SFC<ReportsProps> = ({ days }) => {
-	const [charts, setCharts] = useState([sevenDayGraph(days),thirtyDayGraph(days)])
+	const [charts, ] = useState([sevenDayGraph(days),thirtyDayGraph(days)])
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>

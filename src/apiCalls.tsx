@@ -59,7 +59,6 @@ export const submitUserData = async (startDate: string, avgLength: number, avgCy
 
 	if (response.ok) {
 		const data = await response.json();
-		console.log(data);
 		return data;
 	} else {
 		throw new Error(response.statusText);

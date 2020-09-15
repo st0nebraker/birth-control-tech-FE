@@ -4,7 +4,6 @@ import './Form.scss';
 import { Days, userDetails } from '../App/App';
 import { Link } from 'react-router-dom';
 import { submitDay } from '../apiCalls';
-import moment from 'moment';
 
 export interface FormProps {
 	days: Days[],
@@ -16,11 +15,11 @@ export interface FormProps {
 const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username }) => {
 	const [ today, setToday ] = useState('');
 	const [ temp, setTemp ] = useState<number>();
-	const [ time, setTime ] = useState('')
+	const [ , setTime ] = useState('')
 	const [ selected, setSelected ] = useState([]);
-	const [ userDays, setUserDays ] = useState<Days[]>([]);
+	const [ , setUserDays ] = useState<Days[]>([]);
 	const [ confirmation, setConfirmation ] = useState(false);
-	const [ symptoms, setSymptoms ] = useState([
+	const [ symptoms,  ] = useState([
 		{label: 'Cramping', value: 'cramping'},
 		{label: 'Mood change', value: 'mood change'},
 		{label: 'Bloating', value: 'bloating'},

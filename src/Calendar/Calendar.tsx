@@ -11,7 +11,7 @@ export interface CalendarProps {
 }
 
 const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
-	const [ givenDate, setDate ] = useState<Date>(new Date());
+	const [ givenDate, ] = useState<Date>(new Date());
 	const [ dayForDetails, setDayForDetails ] = useState<Days>();
 	const [ highRisk, setHighRisk ] = useState<Days[]>();
 	const [ lowRisk, setLowRisk ] = useState<Days[]>();
