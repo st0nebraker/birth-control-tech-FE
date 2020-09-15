@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ProfileForm.scss';
+import moment from 'moment';
 
 export interface ProfileFormProps {
 	postUserData: Function;
@@ -13,12 +14,12 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
 
 	const handleSubmit = async (event: any) => {
     event.preventDefault();
-    postUserData(lastOvulation, avgCycleLength, avgPeriodLength, username)
+    postUserData(lastOvulation, avgCycleLength, avgPeriodLength, username);
 	}
 
   return (
 			<form className='profile-form'>
-				<label>First Day of Your Last Period:</label>
+				<label>First Day of Last Period:
 					<input
             name='lastOvulation'
 					  type='date'
@@ -26,9 +27,10 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
 					  value={lastOvulation}
             aria-label='last-ovulation-input'
             data-testid='date'
-					  onChange={e => setLastOvulation(e.target.value)} 
+					  onChange={e => setLastOvulation(moment(e.target.value).format("MM/DD/YYYY"))} 
 				  />
-        <label>Average Cycle Length:</label>
+				</label>
+        <label>Average Cycle Length:
 					<input
             name='avgCycleLength'
 					  type='number'
@@ -37,7 +39,8 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
 					  aria-label='average-cycle-length-label'
 					  onChange={e => setAvgCycleLength(e.target.value)} 
 					/>
-        <label>Average Period Length:</label>
+				</label>
+        <label>Average Period Length:
 					<input
             name='avgPeriodLength'
 					  type='number'
@@ -46,6 +49,7 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
 					  aria-label='average-period-length-input'
 					  onChange={e => setAvgPeriodLength(e.target.value)} 
 					/>
+				</label>
 				<button 
           onClick={handleSubmit}
           type='button'

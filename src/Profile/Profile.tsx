@@ -15,7 +15,7 @@ export interface ProfileProps {
 const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, username, error}) => {
   return (
     <main className='profile'>
-      <h1 className='headings'>Profile</h1>
+      <p className='headings'>Profile</p>
       <section className='profile-container'>
         {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
         {!error && userData.find(x => x.name === username) &&  (
