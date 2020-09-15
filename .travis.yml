@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
 deploy:
-  provider: netlify
-  site: https://lono.netlify.app/
-  auth: <encrypted auth>
-  edge: true 
+  provider: heroku
+  api_key:
+    secure: u0VsXnRVP6jLe0mcnB7f0v1HFCm7V9lvg1dYqkVNOW1gNCFnlxFKBZsUYt4ofKGqcakEq2pZolwssRIFyxXn2mjXUXKC8Ap52uVmq3PbXdKH76psQG1FunwBsu7t7/FNWv6uBYVZvaQrp2YNTmHhKKAlw1yhIlNETFx6tKdDYMFK8mAA9dPZurRXaOSBlXIl1Y0FfOWZb9utMRqYaDVlSB3UUvf7bADRpJ2C1J4z6e0lXP389+aK3zOQmXzeof6jTPL/p/4QD192avZna2Z2iSxeS6fPbklMkc8RVtmDtwuJ/oQb1zPHLvz2YGflomrFAv6NoODui1CAV2VPRoa4XmGfO9XhMAElM2b/Hawm176yFCGVe3wX8BbfSgyUAY0kePDlg8q5U6OMQxmyT/IhnORugRhpYiBwGLs9WexrO/CufZ2SktS5Xm6wTm1RBR4cvrpOP2bEPoiMxzeiRn3ROwPH9R7wBOQbieacFeWtCEBdfiCGkGnjs8yy6N1OCs0A2qZlAyJO0JZbCl7LghowXbQeqkbXfdldhPscE4CiDg+SPmhvQUVxIIEu2xZsiVTkTBxV1ULMeEV7ulQ8Y6OiREaf+COXCxmEJ06+abXa72WYi+agYaq5KoalDw7F7WboKh00nsgXeec44KUd/pkMSSlmRYZT6y3qPqHFoNKF+bA=
+  app: lono-fertility
+  skip_cleanup: true
