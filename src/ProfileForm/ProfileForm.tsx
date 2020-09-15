@@ -27,7 +27,7 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
 					  value={lastOvulation}
             aria-label='last-ovulation-input'
             data-testid='date'
-					  onChange={e => setLastOvulation(moment(e.target.value).format("MM/DD/YYYY"))} 
+					  onChange={e => setLastOvulation(e.target.value)} 
 				  />
 				</label>
         <label>Average Cycle Length:
