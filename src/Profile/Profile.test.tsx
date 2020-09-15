@@ -9,10 +9,11 @@ describe('ProfileForm', () => {
     const { getByText } = render(
       <MemoryRouter>
         <Profile 
-          lastOvulation={''}
-          duration={0}
-          averageCycle={0}
           logoutUser={Function}
+          postUserData={Function}
+          userData={[]}
+          username={''}
+          error={''}
         />
       </MemoryRouter>
     );
@@ -30,10 +31,11 @@ describe('ProfileForm', () => {
     const { getByText } = render(
       <MemoryRouter>
         <Profile 
-          lastOvulation={''}
-          duration={0}
-          averageCycle={0}
           logoutUser={mockLogoutUser}
+          postUserData={Function}
+          userData={[]}
+          username={''}
+          error={''}
         />
       </MemoryRouter>
     );

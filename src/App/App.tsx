@@ -19,7 +19,7 @@ export interface Days {
 }
 export interface userDetails {
 	start_date: string,
-	avg_length: number,
+	avg_period: number,
 	avg_cycle: number,
 	name: string
 }
@@ -31,7 +31,7 @@ const App = () => {
 	const [ userData, setUserData ] = useState<userDetails[]>([
 		{
 			start_date: '',
-			avg_length: 0,
+			avg_period: 0,
 			avg_cycle: 0,
 			name: ''
 		}
@@ -114,7 +114,10 @@ const App = () => {
 				<Route path='/new-entry' 
 					render={() => <Form days={days} getUserDays={getUserDays} userDetails={userData} username={username} />}
 				/>
-				<Route path='/stats' component={Reports} />
+				<Route 
+					path='/stats' 
+					render={() => <Reports days={days}/>} 
+				/>
 				<Route 
 					path='/calendar' 
 					render={() => <Calendar userDays={days}/>} 

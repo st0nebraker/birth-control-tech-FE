@@ -24,7 +24,7 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, u
             <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
             </p>
             <p>
-            <span>Duration: </span> <br/>{userData[userData.length-1].avg_length} Days
+            <span>Duration: </span> <br/>{userData[userData.length-1].avg_period} Days
             </p>
             <p>
             <span>Average Cycle Length: </span> <br/>{userData[userData.length-1].avg_cycle} Days

@@ -49,7 +49,7 @@ export const submitUserData = async (startDate: string, avgLength: number, avgCy
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
 			"start_date": startDate,
-			"avg_length": avgLength,
+			"avg_period": avgLength,
 			"avg_cycle": avgCycle,
 			"name": username
 		})

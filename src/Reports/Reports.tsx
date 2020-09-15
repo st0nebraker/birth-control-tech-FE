@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
+import { Days } from '../App/App';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Reports.scss';
 
-const Reports = () => {
-	const [charts, setCharts] = useState(['one', 'two', 'three', 'four'])
+import {Line} from 'react-chartjs-2';
+import {sevenDayGraph, thirtyDayGraph} from './Charts'
+export interface ReportsProps {
+	days: Days[]
+}
+
+const Reports: React.SFC<ReportsProps> = ({ days }) => {
+	const [charts, setCharts] = useState([sevenDayGraph(days),thirtyDayGraph(days)])
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
@@ -14,15 +21,35 @@ const Reports = () => {
 				{charts.map((chart, i) => {
 					return (
 						<div className='display-chart' key={i}>
-							{/* chart.image */}
-							<p>{chart}</p>
-							<p className="legend">Subtitle: info</p>
+							<Line data={chart} options={{
+								responsive: true,
+								maintainAspectRatio : false,
+								title: {text: 'Past 7 Days', 
+									display: true, 
+									fontFamily: 'Capriola', 
+									fontColor: 'rgba(17,138,178, 1)',
+									fontSize: 18,},
+								legend: {
+									display: false,
+									// position: 'bottom',
+									// labels: {
+									// 	fontFamily: 'Capriola',
+									// 	fontSize: 12,
+									// }
+								},
+								scales: {
+									xAxes: [{
+										ticks: {
+											fontSize: 12,
+										}
+									}]
+								}
+							}}
+							/>
 						</div>
 					)
 				})}
 			</Carousel>
-			{/* <section className='reports-container'>
-			</section> */}
 		</main>
 	)
 }
