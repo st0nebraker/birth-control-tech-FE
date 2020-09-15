@@ -38,20 +38,33 @@ const App = () => {
 	])
 	const [ error, setError ] = useState("");
 	
-	useEffect(() => {getUserDetails()}, [userData]);
 	useEffect(() => {getUserDays()}, []);
-	
-	const getUserDetails = async (): Promise<any> => {
-		if (userData) {
-			try {
-				const data = await getUserData();
-				setUserData(data);
-			} catch (error) {
-				setError(error.toString());
+	useEffect(() => {
+		if (userData.length) {
+			const getUserDetails = async (): Promise<any> => {
+				try {
+					const data = await getUserData();
+					setUserData(data);
+				} catch (error) {
+					setError(error.toString());
+				}
 			}
+			getUserDetails()
 		}
-	}
-
+	}, [userData]);
+	
+	// const getUserDetails = async (): Promise<any> => {
+	// 	if (userData.length) {
+	// 		try {
+	// 			const data = await getUserData();
+	// 			setUserData(data);
+	// 		} catch (error) {
+	// 			setError(error.toString());
+	// 		}
+	// 	}
+	// }
+	
+	
 	const postUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string): Promise<any> => {
 		try {
 			const data = await submitUserData(startDate, avgLength, avgCycle, username)

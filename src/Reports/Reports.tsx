@@ -39,7 +39,7 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 								scales: {
 									xAxes: [{
 										ticks: {
-											fontSize: 8,
+											fontSize: 12,
 										}
 									}]
 								}
