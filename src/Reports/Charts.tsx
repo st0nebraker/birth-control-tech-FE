@@ -7,7 +7,10 @@ export const sevenDayGraph = (days: Days[]) => {
 	const data = {
 		labels: getLast7Days,
 		datasets: [{
-      data: getLast7Data
+      data: getLast7Data,
+      backgroundColor: 'rgba(251, 206, 144, 0.4)',
+      borderColor: 'rgba(251, 206, 144, 1)',
+      fill: false,
 		}]
   }
 

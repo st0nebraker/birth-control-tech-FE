@@ -7,23 +7,17 @@
 	font-size: 3.5vh;
 }
 
-.reports-container {
-	margin-top: 10%;
-	height: 45vh;
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	border-radius: 17px;
-	background-color: #172A35;
-	padding: 15px;
-	overflow-x: auto;
-}
-
-.display-chart {
-	width: 90vw;
-	color: white;
-	font-size: 4vh;
-}
+// .reports-container {
+// 	margin-top: 10%;
+// 	height: 45vh;
+// 	display: flex;
+// 	flex-wrap: nowrap;
+// 	align-items: center;
+// 	border-radius: 17px;
+// 	background-color: #172A35;
+// 	padding: 15px;
+// 	overflow-x: auto;
+// }
 
 .slider {
 	height: 45vh;
@@ -33,6 +27,9 @@
 	background: #172A35;
 	background-color: #172A35;
 	border-radius: 17px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .carousel .carousel-status {
@@ -46,9 +43,10 @@
 }
 
 .display-chart {
-	width: 100vw;
+	width: 90vw;
 	height: 40vh;
 	display: flex;
-	flex-direction: column;
-	margin-top: 20%;
+	justify-content: center;
+	background-color: white;
+	border-radius: 10px;
 }

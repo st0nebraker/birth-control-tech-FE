@@ -17,16 +17,34 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
 			<p className='headings'>Reports</p>
-			{/* <Line data={charts[0]} /> */}
-
 			<Carousel>
 				{charts.map((chart, i) => {
 					return (
 						<div className='display-chart' key={i}>
-							{/* chart.image */}
-							{/* <p>{chart}</p> */}
-							<Line data={chart} />
-							{/* <p className="legend">Subtitle: info</p> */}
+							<Line data={chart} options={{
+								responsive: true,
+								maintainAspectRatio : false,
+								title: {text: 'Past 7 Days', 
+									display: true, 
+									fontFamily: 'Capriola', 
+									fontColor: 'rgba(17,138,178, 1)',
+									fontSize: 18,},
+								legend: {
+									position: 'bottom',
+									labels: {
+										fontFamily: 'Capriola',
+										fontSize: 12,
+									}
+								},
+								scales: {
+									xAxes: [{
+										ticks: {
+											fontSize: 8,
+										}
+									}]
+								}
+							}}
+							/>
 						</div>
 					)
 				})}
