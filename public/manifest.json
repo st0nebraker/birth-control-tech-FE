@@ -1,25 +1,16 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "lono_f.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "lono_f.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "lono_f.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "Lono",
+	"name": "Lono Fertility Tracker",
+	"icons": [
+		{
+			"src": "/lono_f.png",
+			"type": "image/png",
+			"sizes": "1024x1024",
+			"purpose": "maskable"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#233C4C",
+	"background_color": "#172A35"
 }
