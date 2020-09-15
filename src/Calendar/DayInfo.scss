@@ -28,13 +28,8 @@
 	font-size: 1.5em;
 }
 
-.Collapsible {
-  // background-color: white;
-}
-
 .Collapsible__contentInner {
   padding: 10px;
-  // border: 1px solid grey;
   border-top: 0;
 
   p {
@@ -53,7 +48,6 @@
   font-weight: 400;
   text-decoration: none;
 	color: grey;
-	// content: '\f01b';
   position: relative;
   padding: 10px;
   background: #233C4C;
