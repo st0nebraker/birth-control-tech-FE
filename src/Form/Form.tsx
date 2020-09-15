@@ -4,6 +4,7 @@ import './Form.scss';
 import { Days, userDetails } from '../App/App';
 import { Link } from 'react-router-dom';
 import { submitDay } from '../apiCalls';
+import moment from 'moment';
 
 export interface FormProps {
 	days: Days[],
@@ -39,8 +40,8 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 	useEffect(() => { setUserDays(days) }, [ days ])
 
 	const getDate = () => {
-		setToday('10/31/2020')
-		// setToday(moment(new Date()).format("MM/DD/YYYY"));
+		// setToday('10/31/2020')
+		setToday(moment(new Date()).format("MM/DD/YYYY"));
 	}
 
 	const handleSubmit = async (event: any) => {
