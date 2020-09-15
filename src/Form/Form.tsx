@@ -15,7 +15,7 @@ export interface FormProps {
 
 const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username }) => {
 	const [ today, setToday ] = useState('');
-	const [ temp, setTemp ] = useState('');
+	const [ temp, setTemp ] = useState<number>();
 	const [ time, setTime ] = useState('')
 	const [ selected, setSelected ] = useState([]);
 	const [ userDays, setUserDays ] = useState<Days[]>([]);
@@ -47,10 +47,13 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 	const handleSubmit = async (event: any) => {
 		event.preventDefault();
 		try {
-			const data = await submitDay(temp, today, username)
-			console.log(data);
-			setConfirmation(true);
-			getUserDays();
+			if (temp) {
+				const roundedTemp = Math.round(temp * 100) / 100;
+				const data = await submitDay(roundedTemp, today, username)
+				console.log(data);
+				setConfirmation(true);
+				getUserDays();
+			}
 		} catch (error) {
 			console.log(error)
 		}
@@ -178,7 +181,7 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 							value={temp}
 							className='input'
 							aria-label='temperature-input'
-							onChange={e => setTemp(e.target.value)} 
+							onChange={e => setTemp(Number(e.target.value))} 
 							required
 						/>
 						<div className='BBT-deg'>°F</div>

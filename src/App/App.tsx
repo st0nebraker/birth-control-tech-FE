@@ -38,7 +38,7 @@ const App = () => {
 	])
 	const [ error, setError ] = useState("");
 	
-	useEffect(() => {getUserDetails()}, [userData]);
+	useEffect(() => {getUserDetails()}, []);
 	useEffect(() => {getUserDays()}, []);
 	
 	const logoutUser= () => {
@@ -46,69 +46,64 @@ const App = () => {
 		setLoggedIn(false)
 	}
 
-	const getUserDetails = async (): Promise<any> => {
-		console.log(userData)
-		if (userData.length === 1) {
-		//TODO: w/o the if we have an infinite loop
-		//but w/ it, a new user can't submit profile info for 1st time
+	const getUserDetails = async (): Promise<void> => {
 			try {
 				const data = await getUserData();
-				setUserData(data);
+				return setUserData(data);
 			} catch (error) {
 				setError(error.toString());
 			}
-		}
 	}
 
 	const postUserData = async (startDate: string, avgLength: number, avgCycle: number, username: string): Promise<any> => {
 		try {
-			const data = await submitUserData(startDate, avgLength, avgCycle, username)
-			return data
+			const data = await submitUserData(startDate, avgLength, avgCycle, username);
+			return setUserData([...userData, data]);
 		} catch (error) {
 			setError(error.toString());
 		}
 	}
 
-	const getUserDays = async () => {
-		// setDays([
-		// 	{
-		// 		temperature: 97.3921407225235,
-		// 		date: '09/01/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.45472336125859,
-		// 		date: '09/02/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.37539305082102,
-		// 		date: '09/03/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.39594321187163,
-		// 		date: '09/04/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{ 
-		// 		temperature: 97.22967507338001,
-		// 		date: '09/05/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{ 
-		// 		temperature: 97.15550167462081,
-		// 		date: '09/06/2020',
-		// 		high_risk: false
-		// 	}
-		// ])
+	const getUserDays = async (): Promise<void> => {
+		setDays([
+			{
+				temperature: 97.3921407225235,
+				date: '09/01/2020',
+				high_risk: false
+			},
+			{
+				temperature: 97.45472336125859,
+				date: '09/02/2020',
+				high_risk: false
+			},
+			{
+				temperature: 97.37539305082102,
+				date: '09/03/2020',
+				high_risk: false
+			},
+			{
+				temperature: 97.39594321187163,
+				date: '09/04/2020',
+				high_risk: false
+			},
+			{ 
+				temperature: 97.22967507338001,
+				date: '09/05/2020',
+				high_risk: false
+			},
+			{ 
+				temperature: 97.15550167462081,
+				date: '09/06/2020',
+				high_risk: false
+			}
+		])
 
-		try {
-			const data = await getDays();
-			return setDays(data);
-		} catch (error) {
-			setError(error.toString());
-		}
+		// try {
+		// 	const data = await getDays();
+		// 	return setDays(data);
+		// } catch (error) {
+		// 	setError(error.toString());
+		// }
 	}
 
   return (
