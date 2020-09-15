@@ -2,25 +2,33 @@
   display: flex;
 	flex-direction: column;
   justify-content: space-evenly;
-  height: 55vh;
+	height: 55vh;
+	width: 100%;
   align-items: center;
   text-align: center;
   margin: 0;
 
   label {
-    font-size: 2.5vh;
+		font-size: 2vh;
+		width: 100%;
+		display: flex;
+    justify-content: flex-start;
+		align-items: center;
+		margin-left: 3%;
   }
 
   input {
-    width: fit-content;
+		width: fit-content;
+		max-width: 110px;
+		height: 2.5vh;
     padding: 1%;
-    margin-top: -10%;
-    background-color: #3F657D;
+		margin-left: 2%;
+		background-color: #3F657D;
     border: solid 1px #3F657D;
     border-radius: 3px;
     color: #FFF6E9;
-    font-size: .4em;
-    font-family: 'Capriola', sans-serif;
+		font-size: 1.3vh;
+		font-family: 'Capriola', sans-serif;
   }
 
   button {

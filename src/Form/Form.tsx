@@ -62,7 +62,8 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 	//TODO: make JSX more DRY?
   return (
 		<main className='Main-User-View'>
-			
+			<h1 className='headings' style={{ fontSize:'6vh' }}>Today's Entry</h1>
+
 			{days.find(x => x.date === today) && 
 				<form>
 					<div style={{color: 'grey', fontStyle: 'italic', textAlign: 'center', fontSize: '2.5vh'}}>You already filled out today's log!</div>
