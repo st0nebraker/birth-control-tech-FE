@@ -6,13 +6,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Reports.scss';
 
 import {Line} from 'react-chartjs-2';
-import {sevenDayGraph} from './Charts'
+import {sevenDayGraph, thirtyDayGraph} from './Charts'
 export interface ReportsProps {
 	days: Days[]
 }
 
 const Reports: React.SFC<ReportsProps> = ({ days }) => {
-	const [charts, setCharts] = useState([sevenDayGraph(days), sevenDayGraph(days), sevenDayGraph(days), sevenDayGraph(days)])
+	const [charts, setCharts] = useState([sevenDayGraph(days),thirtyDayGraph(days)])
 
 	return (
 		<main className='Main-User-View' style={{ justifyContent: 'flex-start' }}>
@@ -30,11 +30,12 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 									fontColor: 'rgba(17,138,178, 1)',
 									fontSize: 18,},
 								legend: {
-									position: 'bottom',
-									labels: {
-										fontFamily: 'Capriola',
-										fontSize: 12,
-									}
+									display: false,
+									// position: 'bottom',
+									// labels: {
+									// 	fontFamily: 'Capriola',
+									// 	fontSize: 12,
+									// }
 								},
 								scales: {
 									xAxes: [{
@@ -49,8 +50,6 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 					)
 				})}
 			</Carousel>
-			{/* <section className='reports-container'>
-			</section> */}
 		</main>
 	)
 }
