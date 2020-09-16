@@ -1,44 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Lono: Group Project](https://lono-fertility.herokuapp.com/)
 
-## Available Scripts
+### Contributors
+* __Becca Steinbrecher__ (GitHub: [b-stein](https://github.com/b-stein))
+* __Alex Sodemann__ (GitHub: [asodemann18](https://github.com/asodemann18))
+## Abstract
+This is a birth control tool for women who follow the fertility awareness method (natural birth control).  A user logging in for the first time is prompted to submit the profile form, so the app can start tracking their high risk and low risk days.  Once their profile information has been logged, a user can start tracking their daily basal body temperature along with any symptoms they might be having that day.  After filling out today's entry, a user can then view whether today is a high risk day or not.  The user can also see their historical data through a color coded calendar, or she can view reports that will display her temperature over the past 7 or 30 days. 
+## Learning Goals
+* Build a PWA
+* Utilize TypeScript and React Hooks
+* Implement TravisCI
+* Deploy to Heroku
+## Setup
+View the deployed application [here](https://lono-fertility.herokuapp.com/)
 
-In the project directory, you can run:
+--OR--
 
-### `npm start`
+```
+$ git clone [file path name]
+$ cd birthcontroltechfe
+$ npm install 
+$ npm start
+```
+## In Action
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wins
+- 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Writing a very atomic project board from the beginning, and staying on task with our due dates to finish the project on time
+- Gaining more practice with SCSS, accessibility installments, network requests, spy testing, and iterator prototypes
+- Long, effective pairing hours remotely
+## Future Iterations..
+- Connect the daily entry form to a bluetooth thermometer, so a user's daily entry is automatically captured.
+- Predict a user's high risk days
+## Technologies Used
+- React, React Hooks
+- TypeScript
+- Jest
+- React Testing Library
+- HTML/SCSS
+- npm
+  - react-chartjs-2
+  - react-multi-select-component
+  - react-calendar
+  - moment
+## Systems/Practices
+- git/Version Control
+- TravisCI
+- Heroku
+- PR Template
+- Project Board
+- TDD
