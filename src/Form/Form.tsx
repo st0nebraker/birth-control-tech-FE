@@ -40,8 +40,7 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 	useEffect(() => { setUserDays(days) }, [ days ])
 
 	const getDate = () => {
-		setToday('09/20/2020')
-		// setToday(moment(new Date()).format("MM/DD/YYYY"));
+		setToday(moment(new Date()).format("MM/DD/YYYY"));
 	}
 
 	const handleSubmit = async (event: any) => {
