@@ -15,7 +15,6 @@ export const submitDay = async (temp: number, date: string, username: string) =>
 
 	if (response.ok) {
 		const data = await response.json();
-		console.log(data);
 		return data;
 	} else {
 		throw new Error(response.statusText);
@@ -27,7 +26,6 @@ export const getDays = async () => {
 	
 	if (response.ok) {
 		const data = await response.json();
-		console.log(data);
 		return data
 	} else {
 		throw new Error(response.statusText);

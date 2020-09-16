@@ -16,7 +16,8 @@ export const sevenDayGraph = (days: Days[]) => {
       data: lastSevenTemps,
       backgroundColor: 'rgba(251, 206, 144, 0.4)',
       borderColor: 'rgba(251, 206, 144, 1)',
-      fill: false,
+			fill: false,
+			borderWidth: 6
 		}]
   }
 
@@ -40,9 +41,10 @@ export const thirtyDayGraph = (days: Days[]) => {
 		labels: lastThirtyDays,
 		datasets: [{
       data: lastThirtyTemps,
-      backgroundColor: 'rgba(251, 206, 144, 0.4)',
-      borderColor: 'rgba(251, 206, 144, 1)',
-      fill: false,
+      backgroundColor: 'rgba(117, 130, 200, 0.4)',
+      borderColor: 'rgba(117, 130, 200, 1)',
+			fill: false,
+			borderWidth: 6
 		}]
   }
 

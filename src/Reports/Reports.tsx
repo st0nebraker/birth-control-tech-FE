@@ -18,12 +18,13 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 			<p className='headings'>Reports</p>
 			<Carousel showThumbs={false}>
 				{charts.map((chart, i) => {
+					const titleToFind = i === 0 ? 'Past 7 Days' : 'Past 30 Days'
 					return (
 						<div className='display-chart' key={i}>
 							<Line data={chart} options={{
 								responsive: true,
 								maintainAspectRatio : false,
-								title: {text: 'Past 7 Days', 
+								title: {text: titleToFind, 
 									display: true, 
 									fontFamily: 'Capriola', 
 									fontColor: 'rgba(17,138,178, 1)',
