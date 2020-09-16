@@ -19,7 +19,7 @@ describe('ProfileForm', () => {
     );
 
     const title = getByText('Profile');
-    const logoutBtn = getByText('Logout');
+    const logoutBtn = getByText('LOGOUT');
     
     expect(title).toBeInTheDocument();
     expect(logoutBtn).toBeInTheDocument();
@@ -40,7 +40,7 @@ describe('ProfileForm', () => {
       </MemoryRouter>
     );
 
-    const logoutBtn = getByText('Logout');
+    const logoutBtn = getByText('LOGOUT');
     fireEvent.click(logoutBtn)
 
     expect(mockLogoutUser).toHaveBeenCalledTimes(1);
@@ -70,7 +70,7 @@ describe('ProfileForm', () => {
     );
 
     const lastOvulation = getByText('First Day of Last Period:');
-    const submit = getByRole('button', {name: 'Submit'});
+    const submit = getByRole('button', {name: 'SUBMIT'});
 
     expect(lastOvulation).toBeInTheDocument();
     expect(submit).toBeInTheDocument();
@@ -101,7 +101,7 @@ describe('ProfileForm', () => {
 
     const lastOvulation = getByText(/Last Ovulation:/)
     const duration = getByText(/Duration:/)
-    const avgLength = getByText(/Average Cycle Length:/)
+    const avgLength = getByText(/Avg Cycle Length:/)
 
     const lastOvulationInput = queryByText('First Day of Last Period:');
     const submit = queryByRole('button', {name: 'Submit'});

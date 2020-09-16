@@ -40,7 +40,6 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 	useEffect(() => { setUserDays(days) }, [ days ])
 
 	const getDate = () => {
-		// setToday('09/16/2020')
 		setToday(moment(new Date()).format("MM/DD/YYYY"));
 	}
 
@@ -58,14 +57,13 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 		}
 	}
 	
-	//TODO: make JSX more DRY?
   return (
 		<main className='Main-User-View'>
-			<h1 className='headings' style={{ fontSize:'6vh' }}>Today's Entry</h1>
 
-			{days.find(x => x.date === today) && 
-				<form>
+			{days.find(x => x.date === today) && userDetails.find(x => x.name === username) &&
+				<div><p className='headings' style={{ fontSize:'6vh' }}>Today's Entry</p>
 					<div style={{color: 'grey', fontStyle: 'italic', textAlign: 'center', fontSize: '2.5vh'}}>You already filled out today's log!</div>
+				<form>
 					<label>Today: {today}</label>
 					<label>Time:
 						<input 
@@ -107,14 +105,15 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 					>
 						SUBMIT
 					</button>
-				</form>
+				</form></div>
 			}
 
 			{!userDetails.find(x => x.name === username) &&
+				<div><p className='headings' style={{ fontSize:'6vh' }}>Today's Entry</p>
+					<div style={{color: 'grey', fontStyle: 'italic', textAlign: 'center', fontSize: '2.5vh'}}>
+						Fill out your <Link to='profile' style={{textDecoration: 'none', color: '#FBCE90', fontWeight: 'bolder'}}>profile</Link> before making an entry
+					</div>
 				<form>
-				<div style={{color: 'grey', fontStyle: 'italic', textAlign: 'center', fontSize: '2.5vh'}}>
-					Fill out your <Link to='profile' style={{textDecoration: 'none', color: '#FBCE90', fontWeight: 'bolder'}}>profile</Link> before making an entry
-				</div>
 				<label>Today: {today}</label>
 				<label>Time:
 					<input 
@@ -156,10 +155,11 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 				>
 					SUBMIT
 				</button>
-			</form>
+			</form></div>
 			}
 
 			{!days.find(x => x.date === today) && userDetails.find(x => x.name === username) &&
+				<div><p className='headings' style={{ fontSize:'6vh' }}>Today's Entry</p>
 				<form>
 					<label>Today: {today}</label>
 					<label>Time:
@@ -203,7 +203,7 @@ const Form: React.FC<FormProps> = ({ days, getUserDays, userDetails, username })
 						SUBMIT
 					</button>
 					{confirmation && <div style={{ fontStyle: 'italic', color: '#FBCE90', fontSize: '.8em', marginLeft: '17%' }}>Entry submitted</div>}
-				</form>
+				</form></div>
 			}
 		</main>
   )

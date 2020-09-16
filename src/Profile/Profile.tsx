@@ -19,23 +19,23 @@ const Profile: React.SFC<ProfileProps> = ({logoutUser, postUserData, userData, u
       <section className='profile-container'>
         {error && <p className='error-msg'>Oh no! Something went wrong. Please try again.</p>}
         {!error && userData.find(x => x.name === username) &&  (
-          <>
-            <p>
-            <span>Last Ovulation: </span> <br/>{userData[userData.length-1].start_date}
+          <section style={{marginTop: '10%', marginBottom: '10%'}}>
+            <p className='profile-info'>
+            <span style={{marginRight: '2%', color: 'white'}}>Last Ovulation: </span> {userData[userData.length-1].start_date}
             </p>
-            <p>
-            <span>Duration: </span> <br/>{userData[userData.length-1].avg_period} Days
+            <p className='profile-info'>
+            <span style={{marginRight: '2%', color: 'white'}}>Duration: </span> {userData[userData.length-1].avg_period} days
             </p>
-            <p>
-            <span>Average Cycle Length: </span> <br/>{userData[userData.length-1].avg_cycle} Days
+            <p className='profile-info'>
+            <span style={{marginRight: '2%', color: 'white'}}>Avg Cycle Length: </span> {userData[userData.length-1].avg_cycle} days
             </p>
-          </>)
+          </section>)
         }
         {!error && !userData.find(x => x.name === username) && <ProfileForm postUserData={postUserData} username={username} />}
       </section>
       <Link to='/'>
         <button className='logout-button' type='button' onClick={(event) => logoutUser(event)}>
-          Logout
+          LOGOUT
         </button>
       </Link>
     </main>
