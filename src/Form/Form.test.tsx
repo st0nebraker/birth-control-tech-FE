@@ -3,6 +3,7 @@ import "@testing-library/jest-dom";
 import { render, waitFor, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Form from './Form';
+import moment from 'moment';
 
 describe('Form', () => {
 	it("Should display user entry form date", () => {
@@ -10,7 +11,8 @@ describe('Form', () => {
 			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 		
-		const formDate = getByText('Today: 10/31/2020')
+		const today = moment(new Date()).format("MM/DD/YYYY");
+		const formDate = getByText(`Today: ${today}`)
 
 		expect(formDate).toBeInTheDocument();
 	})
