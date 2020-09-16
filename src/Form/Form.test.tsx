@@ -42,9 +42,9 @@ describe('Form', () => {
 			<MemoryRouter><Form days={[]} getUserDays={Function} userDetails={[]} username={'Fran'} /></MemoryRouter>
 		)
 
-		const symptomeInput = getByText('Symptoms:')
+		const symptomInput = getByText('Symptoms:')
 
-		expect(symptomeInput).toBeInTheDocument();
+		expect(symptomInput).toBeInTheDocument();
 	})
 
 	it("Should display submit button", () => {

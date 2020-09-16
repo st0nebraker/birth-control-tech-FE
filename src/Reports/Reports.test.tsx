@@ -2,7 +2,9 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import 'jest-canvas-mock';
 import Reports from './Reports';
+
 
 describe('Reports', () => {
 	it("Should display reports title", () => {
@@ -32,9 +34,9 @@ describe('Reports', () => {
 	it("Should have 6 buttons", () => {
 		const { debug } = render(
 			<MemoryRouter>
-				<Reports 
-					days={[]}
-				/>
+			<Reports 
+				days={[]}
+			/>
 			</MemoryRouter>
 		)
 
