@@ -47,13 +47,37 @@ describe('ProfileForm', () => {
     const AvgPeriodLengthInput = getByPlaceholderText('7 Days');
 
     fireEvent.change(lastOvulationInput, {target: {value: '2020-09-01'}});
-    // fireEvent.change(lastOvulationInput, {target: {value: '09-01/2020'}});
     fireEvent.change(AvgCycleLengthInput, {target: {value: 21}});
     fireEvent.change(AvgPeriodLengthInput, {target: {value: 5}});
     
-    // expect(lastOvulationInput).toHaveValue('2020-09-01');
     expect(lastOvulationInput).toHaveValue('2020-09-01');
     expect(AvgCycleLengthInput).toHaveValue(21);
     expect(AvgPeriodLengthInput).toHaveValue(5);
+  });
+
+  it('should send a post request when a user fills out the form and clicks submit', () => {
+    const mockUserPost = jest.fn();
+    
+    const { getByPlaceholderText, getByTestId, getByRole } = render(
+      <MemoryRouter>
+        <ProfileForm 
+            postUserData={mockUserPost}
+            username={''}
+        />
+      </MemoryRouter>
+    );
+
+    const lastOvulationInput = getByTestId('date');
+    const AvgCycleLengthInput = getByPlaceholderText('28 Days');
+    const AvgPeriodLengthInput = getByPlaceholderText('7 Days');
+    const submit = getByRole('button', {name: 'Submit'});
+
+
+    fireEvent.change(lastOvulationInput, {target: {value: '2020-09-01'}});
+    fireEvent.change(AvgCycleLengthInput, {target: {value: 21}});
+    fireEvent.change(AvgPeriodLengthInput, {target: {value: 5}});
+    fireEvent.click(submit);
+    
+    expect(mockUserPost).toHaveBeenCalledTimes(1);
   });
 });
