@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Days, userDetails } from '../App/App';
+import moment from 'moment'
 
 export interface HomeProps {
 	days: Days[],
@@ -9,8 +10,8 @@ export interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ days, userDetails, username }) => {
-	const today = '10/31/2020'
-	//const today = moment(new Date()).format("MM/DD/YYYY")
+	// const today = '10/31/2020'
+	const today = moment(new Date()).format("MM/DD/YYYY")
 	const foundDay = days.find(x => x.date === today);
 
 	return (

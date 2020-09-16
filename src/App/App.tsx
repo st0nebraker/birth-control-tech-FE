@@ -65,39 +65,6 @@ const App = () => {
 	}
 
 	const getUserDays = async (): Promise<void> => {
-		// setDays([
-		// 	{
-		// 		temperature: 97.3921407225235,
-		// 		date: '09/01/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.45472336125859,
-		// 		date: '09/02/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.37539305082102,
-		// 		date: '09/03/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{
-		// 		temperature: 97.39594321187163,
-		// 		date: '09/04/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{ 
-		// 		temperature: 97.22967507338001,
-		// 		date: '09/05/2020',
-		// 		high_risk: false
-		// 	},
-		// 	{ 
-		// 		temperature: 97.15550167462081,
-		// 		date: '09/06/2020',
-		// 		high_risk: false
-		// 	}
-		// ])
-
 		try {
 			const data = await getDays();
 			return setDays(data);

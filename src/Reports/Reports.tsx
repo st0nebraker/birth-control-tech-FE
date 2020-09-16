@@ -20,7 +20,7 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 				{charts.map((chart, i) => {
 					const titleToFind = i === 0 ? 'Past 7 Days' : 'Past 30 Days'
 					return (
-						<div className='display-chart' key={i}>
+						<div className='display-chart' key={i} data-testid='chart'>
 							<Line data={chart} options={{
 								responsive: true,
 								maintainAspectRatio : false,
@@ -31,11 +31,6 @@ const Reports: React.SFC<ReportsProps> = ({ days }) => {
 									fontSize: 18,},
 								legend: {
 									display: false,
-									// position: 'bottom',
-									// labels: {
-									// 	fontFamily: 'Capriola',
-									// 	fontSize: 12,
-									// }
 								},
 								scales: {
 									xAxes: [{
