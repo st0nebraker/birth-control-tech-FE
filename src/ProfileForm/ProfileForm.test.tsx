@@ -21,7 +21,7 @@ describe('ProfileForm', () => {
     const lastOvulationPlaceholder = getByPlaceholderText('mm/dd/yyyy');
     const AvgCycleLengthPlaceholder = getByPlaceholderText('28 Days');
     const AvgPeriodLengthPlaceholder = getByPlaceholderText('7 Days');
-    const submit = getByText('Submit');
+    const submit = getByText('SUBMIT');
     
     expect(lastOvulation).toBeInTheDocument();
     expect(AvgCycleLength).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe('ProfileForm', () => {
     const lastOvulationInput = getByTestId('date');
     const AvgCycleLengthInput = getByPlaceholderText('28 Days');
     const AvgPeriodLengthInput = getByPlaceholderText('7 Days');
-    const submit = getByRole('button', {name: 'Submit'});
+    const submit = getByRole('button', {name: 'SUBMIT'});
 
 
     fireEvent.change(lastOvulationInput, {target: {value: '2020-09-01'}});
