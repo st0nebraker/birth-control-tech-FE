@@ -43,8 +43,9 @@ nav {
 	background-color: #233C4C;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;;
+	justify-content: center;
 	width: 100%;
+	overflow: scroll;
 }
 
 .home-container1 {
@@ -58,10 +59,12 @@ nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	height: 30vh;
+	height: 45vh;
 	color: #FFF6E9;
 	font-family: 'Capriola', sans-serif;
 	font-size: 3.5vh;
+	margin-top: 4%;
+	overflow: scroll;
 }
 
 .home-img {
@@ -73,7 +76,7 @@ nav {
   font-family: 'Damion';
   color: #83C7DF;
 	font-size: 8vh;
-	margin: 5%;
+	margin: 2%;
 }
 
 .info-paragraph {
@@ -98,7 +101,7 @@ nav {
 	background-color: #172A35;
 	border-radius: 10px;
 	width: 80vw;
-	height: 15vh;
+	height: 10vh;
 	margin-left: 5%;
 	margin-bottom: 10%;
 	padding-top: 10%;

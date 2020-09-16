@@ -1,6 +1,7 @@
 .home {
 	background-image: url('../assets/home.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -9,6 +10,7 @@
 .home-active {
 	background-image: url('../assets/home-filled.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -17,6 +19,7 @@
 .calendar-icon {
 	background-image: url('../assets/calendar.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -25,6 +28,7 @@
 .calendar-active {
 	background-image: url('../assets/calendar-filled.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -33,6 +37,7 @@
 .new {
 	background-image: url('../assets/new.svg');
 	width: 19%;
+	min-width: 72px;
 	height: 70px;
 	background-repeat: no-repeat;
 }
@@ -40,6 +45,7 @@
 .new-active {
 	background-image: url('../assets/new-filled.svg');
 	width: 19%;
+	min-width: 72px;
 	height: 70px;
 	background-repeat: no-repeat;
 }
@@ -47,6 +53,7 @@
 .chart {
 	background-image: url('../assets/chart.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -55,6 +62,7 @@
 .chart-active {
 	background-image: url('../assets/chart-filled.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -63,6 +71,7 @@
 .profile-icon {
 	background-image: url('../assets/profile.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;
@@ -71,6 +80,7 @@
 .profile-active {
 	background-image: url('../assets/profile-filled.svg');
 	width: 14%;
+	min-width: 50px;
 	height: 100%;
 	background-repeat: no-repeat;
 	margin-top: 6%;

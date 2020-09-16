@@ -33,7 +33,7 @@ const CalendarPage: React.SFC<CalendarProps> = ({ userDays }) => {
 
   return(
    <main className='calendar'>
-     <h1 className='headings'>Calendar</h1>
+     <p className='headings'>Calendar</p>
      <section className='calendar-container'>
       <Calendar
           onClickDay={(e) => clickedDayInfo(e)}

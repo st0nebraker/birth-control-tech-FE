@@ -52,7 +52,7 @@ const ProfileForm: React.SFC<ProfileFormProps> = ({ postUserData, username }) =>
           onClick={handleSubmit}
           type='button'
         >
-          Submit
+          SUBMIT
         </button>
 			</form>
   )
