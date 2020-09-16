@@ -10,8 +10,7 @@ export interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ days, userDetails, username }) => {
-	// const today = '10/31/2020'
-	const today = moment(new Date()).format("MM/DD/YYYY")
+	const today = moment(new Date()).format("MM/DD/YYYY");
 	const foundDay = days.find(x => x.date === today);
 
 	return (
