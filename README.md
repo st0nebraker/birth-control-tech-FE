@@ -24,7 +24,7 @@ A user logged in for the first time is prompted to submit the profile form, so t
 * Deploy to Heroku
 
 ## Setup
-View the [deployed application](https://lono-fertility.herokuapp.com/) (For mobile view, open devtools `cmd + opt + j`, then click mobile view).
+Checkout the [deployed application](https://lono-fertility.herokuapp.com/) (For mobile view, open devtools `cmd + opt + j`, then click mobile view).
 
 --OR--
 
@@ -35,6 +35,7 @@ $ npm install
 $ npm start
 ```
 ## In Action
+![login](https://user-images.githubusercontent.com/59381432/93413668-03f11680-f85d-11ea-924f-33d5295ce8c5.png)
 ![home1](https://user-images.githubusercontent.com/59381432/93413561-c42a2f00-f85c-11ea-8019-af180539dc52.png)
 ![profile1](https://user-images.githubusercontent.com/59381432/93413577-c8eee300-f85c-11ea-85e4-96dc16e5e6fc.png)
 ![profile2](https://user-images.githubusercontent.com/59381432/93413580-cb513d00-f85c-11ea-8a12-e807d2602264.png)
