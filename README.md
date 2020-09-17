@@ -1,4 +1,4 @@
-[Imgur](https://imgur.com/ZryC0TI)
+[Imgjur](https://pasteboard.co/JrqU7Mb.png)
 # Lono
 [![Build Status](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE.svg?branch=master)](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE)
 
