@@ -8,7 +8,7 @@
 - Frontend
   * __Becca Steinbrecher__ (GitHub: [b-stein](https://github.com/b-stein))
   * __Alex Sodemann__ (GitHub: [asodemann18](https://github.com/asodemann18))
-- Backend ([repo](https://github.com/Birth-control-tech/birth-control-tech-BE))
+- Backend ([repo](https://github.com/whitneykidd/lono-be))
   - __Madeleine Halle__ (GitHub: [madhalle](https://github.com/madhalle))
   - __Whitney Kidd__ (GitHub: [whitneykidd](https://github.com/whitneykidd))
 
