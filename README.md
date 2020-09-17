@@ -1,4 +1,5 @@
 # [Lono: Group Project](https://lono-fertility.herokuapp.com/)
+[![Build Status](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE.svg?branch=master)](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE)
 
 ### Contributors
 * __Becca Steinbrecher__ (GitHub: [b-stein](https://github.com/b-stein))
