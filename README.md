@@ -35,7 +35,13 @@ $ npm install
 $ npm start
 ```
 ## In Action
-[![Lono demo](https://img.youtube.com/vi/UPBCkB9-NHg/default.jpg)](https://www.youtube.com/watch?v=UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy)
+![home1](https://user-images.githubusercontent.com/59381432/93413561-c42a2f00-f85c-11ea-8019-af180539dc52.png)
+![profile1](https://user-images.githubusercontent.com/59381432/93413577-c8eee300-f85c-11ea-85e4-96dc16e5e6fc.png)
+![profile2](https://user-images.githubusercontent.com/59381432/93413580-cb513d00-f85c-11ea-8a12-e807d2602264.png)
+![form](https://user-images.githubusercontent.com/59381432/93413601-d5733b80-f85c-11ea-9f3e-b955263dc6c0.png)
+![home2](https://user-images.githubusercontent.com/59381432/93413602-d6a46880-f85c-11ea-9219-0f608dcb1d34.png)
+![calendar](https://user-images.githubusercontent.com/59381432/93413605-d7d59580-f85c-11ea-9876-48de5ce965b2.png)
+![chart](https://user-images.githubusercontent.com/59381432/93413607-d86e2c00-f85c-11ea-92bc-ddf636fa688b.png)
 
 ## Wins
 - Connecting a hardware bluetooth piece to our application programmatically
