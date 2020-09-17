@@ -35,6 +35,7 @@ $ npm install
 $ npm start
 ```
 ## In Action
+[Demo video](https://www.youtube.com/watch?v=UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy)
 ![login](https://user-images.githubusercontent.com/59381432/93413668-03f11680-f85d-11ea-924f-33d5295ce8c5.png)
 ![home1](https://user-images.githubusercontent.com/59381432/93413561-c42a2f00-f85c-11ea-8019-af180539dc52.png)
 ![profile1](https://user-images.githubusercontent.com/59381432/93413577-c8eee300-f85c-11ea-85e4-96dc16e5e6fc.png)
@@ -52,7 +53,7 @@ $ npm start
 - Long, effective pairing hours remotely
 
 ## Future Iterations..
-- Keep bluetooth thermometer connected, capture data for daily log form
+- Finish bluetooth functionality: Keep thermometer connected, capture data for daily log form
 - Predict upcoming high or low risk days
 - Put app on PWA store for android consumption
 - Enable push notification to open right to the daily log form
