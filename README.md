@@ -42,7 +42,7 @@ $ npm start
 ![profile2](https://user-images.githubusercontent.com/59381432/93413580-cb513d00-f85c-11ea-8a12-e807d2602264.png)
 ![form](https://user-images.githubusercontent.com/59381432/93413601-d5733b80-f85c-11ea-9f3e-b955263dc6c0.png)
 ![home2](https://user-images.githubusercontent.com/59381432/93413602-d6a46880-f85c-11ea-9219-0f608dcb1d34.png)
-![calendar](https://user-images.githubusercontent.com/59381432/93413605-d7d59580-f85c-11ea-9876-48de5ce965b2.png)
+<img width="282" alt="calendar" src="https://user-images.githubusercontent.com/59381432/93415523-efaf1880-f860-11ea-86ed-b9db982a3e8f.png">
 ![chart](https://user-images.githubusercontent.com/59381432/93413607-d86e2c00-f85c-11ea-92bc-ddf636fa688b.png)
 
 ## Wins
