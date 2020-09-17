@@ -1,5 +1,7 @@
-<img src="https://user-images.githubusercontent.com/59381432/93412198-ef5f4f00-f859-11ea-97d5-74424f9bb4fd.png" width=80px height=80px alt="Lono">
+<img src="https://user-images.githubusercontent.com/59381432/93412198-ef5f4f00-f859-11ea-97d5-74424f9bb4fd.png" width=150px height=150px alt="Lono">
+
 # Lono
+
 [![Build Status](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE.svg?branch=master)](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE)
 
 ### Contributors
