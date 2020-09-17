@@ -1,9 +1,13 @@
-# [Lono: Group Project](https://lono-fertility.herokuapp.com/)
+# Lono - Frontend Service
 [![Build Status](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE.svg?branch=master)](https://travis-ci.org/Birth-control-tech/birth-control-tech-FE)
 
 ### Contributors
-* __Becca Steinbrecher__ (GitHub: [b-stein](https://github.com/b-stein))
-* __Alex Sodemann__ (GitHub: [asodemann18](https://github.com/asodemann18))
+- Frontend
+  - * __Becca Steinbrecher__ (GitHub: [b-stein](https://github.com/b-stein))
+  - * __Alex Sodemann__ (GitHub: [asodemann18](https://github.com/asodemann18))
+- Backend ([repo](https://github.com/Birth-control-tech/birth-control-tech-BE))
+  - * __Madeleine Halle__ (GitHub: [madhalle](https://github.com/madhalle))
+  - * __Whitney Kidd__ (GitHub: [whitneykidd](https://github.com/whitneykidd))
 
 ## Abstract
 This is a birth control tool for women to follow the fertility awareness method (natural birth control). 
@@ -17,7 +21,7 @@ A user logged in for the first time is prompted to submit the profile form, so t
 * Deploy to Heroku
 
 ## Setup
-View the deployed application [here](https://lono-fertility.herokuapp.com/) (For mobile view, open devtools `cmd + opt + j` and click mobile view).
+View the [deployed application](https://lono-fertility.herokuapp.com/) (For mobile view, open devtools `cmd + opt + j`, then click mobile view).
 
 --OR--
 
