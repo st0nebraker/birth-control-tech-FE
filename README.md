@@ -32,7 +32,7 @@ $ npm install
 $ npm start
 ```
 ## In Action
-[![Lono demo](https://img.youtube.com/vi/UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy/0.jpg)](https://www.youtube.com/watch?v=UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy)
+[![Lono demo](https://img.youtube.com/vi/UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy/1/default.jpg)](https://www.youtube.com/watch?v=UPBCkB9-NHg&feature=youtu.be&ab_channel=BJoy)
 
 ## Wins
 - Connecting a hardware bluetooth piece to our application programmatically
