@@ -55,6 +55,7 @@ $ npm start
 ## Future Iterations..
 - Finish bluetooth functionality: Keep thermometer connected, capture data for daily log form
 - Predict upcoming high or low risk days
+- Finish CRUD features, namely **Updatintg** & **Deleting** entries.
 - Put app on PWA store for android consumption
 - Enable push notification to open right to the daily log form
 - Calculate which of the 4 phases the user is on based off their tracking
