@@ -53,13 +53,15 @@ $ npm start
 - Long, effective pairing hours remotely
 
 ## Future Iterations..
-- Finish bluetooth functionality: Keep thermometer connected, capture data for daily log form
 - Predict upcoming high or low risk days
 - Finish CRUD features, namely **Updatintg** & **Deleting** entries.
+- Implement a CSS framework (Tailwind, Bootstrap, etc) and a color theme
+- Ensure responsive design
+- Track symptoms along with these phases (helpful for athletic planning or general health awareness/planning)
+- Finish bluetooth functionality: Keep thermometer connected, capture data for daily log form
 - Put app on PWA store for android consumption
 - Enable push notification to open right to the daily log form
 - Calculate which of the 4 phases the user is on based off their tracking
-- Track symptoms along with these phases, this is helpful for athletic planning or general health awareness/planning
 
 ## Technologies Used
 - React, React Hooks
